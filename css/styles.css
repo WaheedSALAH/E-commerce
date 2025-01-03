@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+header {
+    background: #c80000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+
+
+#logo {
+    width: 60px;
+    margin-right: 1rem; 
+}
+
+
+
+
+
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 1rem; 
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+nav a:hover {
+    background: #ae9700;
+    border-radius: 5px;
+}
+
+
+main {
+    padding: 2rem;
+    background-color: #000000;
+    text-align: center;
+}
+main h2{
+    color: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.extra{
+display: none;
+}
+
+.product-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.product-card ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: none;
+}
+
+.product-card button {
+    background-color: #c80000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.product-card button:hover {
+    background-color: #ae9700;
+}
+
+.product-grid :hover {
+    cursor: pointer;
+    background-color: lightcoral;
+    transition: 0.5s;
+}
+footer {
+    background: #c80000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer .footer-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+}
+footer .footer-sections div {
+    flex: 1;
+    margin: 0.5rem;
+    min-width: 150px;
+}
+footer .footer-sections h3 {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 0.2rem 0;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+form {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+button {
+    background: #007BFF;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    #featured-products, #product-list {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0.25rem;
+    }
+}
