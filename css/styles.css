@@ -57,11 +57,10 @@ nav a:hover {
 
 main {
     padding: 2rem;
-    background-color: #000000;
     text-align: center;
 }
 main h2{
-    color: #fff;
+    color: #000000;
 }
 
 .product-grid {
@@ -120,7 +119,7 @@ display: none;
 }
 footer {
     background: #c80000;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 1rem;
     position: relative;
@@ -154,13 +153,19 @@ footer a:hover {
 }
 
 form {
+    font-size: larger;
+    text-decoration: solid;
     max-width: 400px;
     margin: 2rem auto;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.5); /* لون أبيض مع شفافية 50% */
     padding: 1.5rem;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    text-align: center;
+    backdrop-filter: blur(9px); /* إضافة تأثير الضبابية للخلفية */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* حدود خفيفة */
 }
+
 
 form label {
     display: block;
@@ -182,6 +187,7 @@ form button {
     color: #fff;
     border: none;
     padding: 0.75rem;
+    margin-bottom: 20px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;

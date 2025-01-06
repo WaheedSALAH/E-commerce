@@ -1,0 +1,104 @@
+body{
+    background-color: black;
+}
+.extra{
+    display: block;
+
+
+}
+.extra:hover {
+    width: 20%; 
+    transform: scale(1.2);
+    filter: brightness(1.2);  
+}
+.main-pic:hover{
+    width: 20%; 
+    transform: scale(1.2);
+    filter: brightness(1.2); 
+
+}
+#op{
+    border:solid black;
+
+}
+.product-card ul {
+    background-color: rgb(45, 45, 45);
+    border:dotted lightgray;
+}
+.product-card ul li {
+    color: #ffffff;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: block;
+}
+.product-card ul h1{
+    color: #ffffff;
+}
+.product-card {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: rgb(0, 0, 0);
+}
+
+.product-card img {
+    width: 15%;
+    height: auto;
+    border-radius: 8px;
+    object-fit:contain;
+}
+
+
+.product-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.product-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.product-card ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: block;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+.product-card button {
+    background-color: #c80000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: fit-content;
+    align-self: flex-start;
+    margin: 10px;
+}
+
+.product-card button:hover {
+    background-color: #ae9700;
+}
+
+

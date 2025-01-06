@@ -6,7 +6,7 @@ product.forEach((product) => {
         
         window.localStorage.setItem(("product"),product.currentTarget.outerHTML)
 
-        window.location.href = 'product-details.html';
+        window.location.href = 'html/product-details.html';
 
         
 

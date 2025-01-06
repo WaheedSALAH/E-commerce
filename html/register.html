@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | E-Commerce</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <script defer src="../java script/register.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <body>
+            <form id="registrationForm" action="home.html" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" >
+                <div class="error" id="usernameError"></div>
+        
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter your email" >
+                <div class="error" id="emailError"></div>
+        
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <div class="error" id="passwordError"></div>
+        
+        
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                <div class="error" id="confirmPasswordError"></div>
+        
+                <button type="submit">Register</button>
+        
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 AL Ahly Store</p>
+    </footer>
+</body>
+
+
+
