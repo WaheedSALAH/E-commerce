@@ -7,8 +7,9 @@ document.getElementById("login-form").addEventListener("submit", async function 
     // Fetch user data from JSON file
     const response = await fetch("../users.json");
     const users = await response.json();
-    console.log(users)
-    console.log(response)
+    
+    // console.log(users)
+    // console.log(response)
 
     // Authenticate user
     const user = users.find((u) => u.username === username && u.password === password);

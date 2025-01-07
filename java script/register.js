@@ -87,7 +87,8 @@ password.addEventListener('blur', validatePassword);
 confirmPassword.addEventListener('blur', validateConfirmPassword);
 
 // Validate the form on submit
-form.addEventListener('submit',  function (event) {
+// Submit event for form
+form.addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent form submission to handle validation
 
     const isUsernameValid = validateUsername();
@@ -101,10 +102,11 @@ form.addEventListener('submit',  function (event) {
             username: username.value,
             email: email.value,
             password: password.value, // In production, never send plain text passwords
+            panned : false
         };
 
         try {
-            const response =  fetch('../users.json', {
+            const response = await fetch('/register', { // Send to backend's /register route
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
