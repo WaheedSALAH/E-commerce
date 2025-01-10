@@ -20,15 +20,32 @@ app.get('/seller-dashboard', (req, res) => res.sendFile(path.join(__dirname, 'ht
 
 // Handle POST request for user registration
 app.post('/register', (req, res) => {
-    const userData = req.body;
     const usersFilePath = path.join(__dirname, 'users.json');
+
+    // Read the existing users from the file
     fs.readFile(usersFilePath, 'utf-8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Error reading users data.' });
 
         let users = [];
-        if (data) users = JSON.parse(data);
+        if (data) {
+            try {
+                users = JSON.parse(data); // Parse the JSON data
+            } catch (parseErr) {
+                return res.status(500).json({ error: 'Error parsing users data.' });
+            }
+        }
+
+        // Set the new user's ID
+        const lastUserId = users.length > 0 ? users[users.length - 1].id : 0;
+        const newUserId = lastUserId + 1;
+        
+        // Create the new user object
+        const userData = { id: newUserId, ...req.body };
+
+        // Add the new user to the array
         users.push(userData);
 
+        // Write the updated array back to the file
         fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), (err) => {
             if (err) return res.status(500).json({ error: 'Error saving user data.' });
             res.status(200).json({ success: true, message: 'User registered successfully!' });

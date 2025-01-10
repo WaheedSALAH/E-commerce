@@ -99,6 +99,7 @@ form.addEventListener('submit', async function (event) {
     // If all validations pass, submit the form
     if (isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
         const userData = {
+        
             username: username.value,
             email: email.value,
             password: password.value, // In production, never send plain text passwords

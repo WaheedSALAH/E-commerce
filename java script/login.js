@@ -21,7 +21,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
 
         // Redirect
         if (user.role === "admin") {
-            window.location.href = "admin-dashboard.html";
+            window.location.href = "admin.html";
             
         } else if (user.role === "customer") {
             window.location.href = "../home.html";
