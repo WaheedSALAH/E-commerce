@@ -49,7 +49,7 @@ app.post('/seller-dashboard', (req, res) => {
         let products = [];
         if (data) products = JSON.parse(data);
 
-        const newProduct = { id: Date.now(), ...req.body };
+        const newProduct = { id: Date.now(), ...req.body , product_permition : false };
         products.push(newProduct);
 
         fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
@@ -58,7 +58,7 @@ app.post('/seller-dashboard', (req, res) => {
                 return res.status(500).json({ error: 'Error saving product data.' });
             }
             console.log("Product added successfully:", newProduct);
-            res.status(200).json({ success: true, message: 'Product added successfully!', product: newProduct });
+            res.status(200).json({ success: true, message: 'Product sent successfully! please wait for admin confirmation', product: newProduct });
         });
     });
 });

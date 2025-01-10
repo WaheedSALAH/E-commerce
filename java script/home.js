@@ -14,20 +14,26 @@ fetch('products.json')
         data.forEach(product => {
             // Create product container
             const productDiv = document.createElement('div');
+            
             productDiv.classList.add('product-card');
-            // Add product content
-            productDiv.innerHTML = `
+            if (product.product_permition == false) 
+            {
+                console.log('not permitted')
+                return;
+            }
+            else{
+
+                productDiv.innerHTML = `
 
                 <div class="all">
 
                 <div id="images">
 
                 <img class="main-pic" src="${product.img_url}" alt="${product.product_name}">
-                <img class="extra" src="${product.img2_url}" alt="${product.product_name}">
                 </div>
 
                 <h3>${product.product_name}</h3>
-                <h1><strong>${product.price}</strong></h1>
+                <h1><strong>${product.price} $</strong></h1>
                 <button>Add to Cart</button>
 
                 <ul>
@@ -43,6 +49,9 @@ fetch('products.json')
 
 
             `;
+            }
+            // Add product content
+            
 
             // Append to the main container
             productsDiv.prepend(productDiv);

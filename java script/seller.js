@@ -36,7 +36,7 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         })
         .then(data => {
             if (data.success) {
-                alert("Product added successfully!");
+                alert("Product sent successfully!  please wait for admin confirmation");
                 document.getElementById("addProductForm").reset(); // Reset the form
             } else {
                 alert(data.error || "Failed to add product.");
