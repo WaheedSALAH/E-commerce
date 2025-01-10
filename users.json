@@ -2,16 +2,54 @@
   {
     "username": "waheed",
     "email": "w55h44@gmail.com",
-    "password": "123456789"
+    "password": "123456789",
+    "role": "seller"
   },
   {
     "username": "admin",
     "email": "Wahied.salaa7@gmail.com",
-    "password": "11223344"
+    "password": "112233",
+    "role": "admin"
   },
   {
     "username": "admineeeeeee",
     "email": "w55h44@gma.cooooooooom",
+    "password": "123456789",
+    "panned": false
+  },
+  {
+    "username": "waheed",
+    "email": "wdarwesh365@gmail.com",
+    "password": "node server.js",
+    "panned": false
+  },
+  {
+    "username": "basma",
+    "email": "basma@gmail.com",
+    "password": "112233445566",
+    "panned": false
+  },
+  {
+    "username": "mohamed salah",
+    "email": "mohamedsalah@gmail.com",
+    "password": "11447700",
+    "panned": false
+  },
+  {
+    "username": "Eman gomaa",
+    "email": "ea@gmail.co",
+    "password": "010123010",
+    "panned": false
+  },
+  {
+    "username": "salah",
+    "email": "salah@gmail.co",
+    "password": "14141414",
+    "panned": false
+  },
+  {
+    "username": "alaa",
+    "email": "alaaa@gma.co",
     "password": "123456789",
     "panned": false
   }

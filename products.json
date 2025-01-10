@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "t-shirt-red",
+    "price": "10$",
+    "description": "well manifuctured",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/e204684eaf034c90a8a588c8ca4156e0_9366/IU7913_01_laydown.jpg"
+  },
+  {
+    "product_name": "t-shirt-red",
+    "price": "10$",
+    "description": "well manifuctured",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/e204684eaf034c90a8a588c8ca4156e0_9366/IU7913_01_laydown.jpg"
+  },
+  {
+    "id": 1736522166560,
+    "product_name": "waheed",
+    "description": "weeeeeeeeeeee",
+    "price": 20,
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/37636f64bad04f7997beaf3a00954a48_9366/GC6372_01_laydown.jpg"
+  },
+  {
+    "id": 1736522717042,
+    "product_name": "shoooooort gold",
+    "description": "ابوس ايدك اشترى وانت ساكت",
+    "price": 15,
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/0ca38fa5f0da491fa8fce18375b3dcca_9366/JK2253_01_laydown.jpg"
+  }
+]

@@ -6,55 +6,59 @@ const app = express();
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Serve static files from the "css", "java script", and "E-commerce" root directory
+// Serve static files
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/java-script', express.static(path.join(__dirname, 'java script')));
+app.use(express.static(path.join(__dirname)));
 
-// Serve the root html files directly from the "E-commerce" folder
-app.use(express.static(path.join(__dirname)));  // Serve static files from root folder
-
-// Serve specific HTML pages (check the file paths)
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home.html'));  // Serving home.html from the root folder
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'login.html'));  // Serve login.html from html folder
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'register.html'));  // Serve register.html from html folder
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'product-details.html'));  // Serve product-details.html from html folder
-});
+// Routes for HTML pages
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'home.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'html', 'login.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'html', 'register.html')));
+app.get('/product-details', (req, res) => res.sendFile(path.join(__dirname, 'html', 'product-details.html')));
+app.get('/seller-dashboard', (req, res) => res.sendFile(path.join(__dirname, 'html', 'seller-dashboard.html')));
 
 // Handle POST request for user registration
 app.post('/register', (req, res) => {
     const userData = req.body;
-
-    // Read existing users from users.json
     const usersFilePath = path.join(__dirname, 'users.json');
     fs.readFile(usersFilePath, 'utf-8', (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: 'An error occurred while reading users data.' });
-        }
+        if (err) return res.status(500).json({ error: 'Error reading users data.' });
 
         let users = [];
-        if (data) {
-            users = JSON.parse(data);
-        }
-
-        // Add new user to the list
+        if (data) users = JSON.parse(data);
         users.push(userData);
 
-        // Write the updated data to users.json
         fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: 'Error saving user data.' });
+            res.status(200).json({ success: true, message: 'User registered successfully!' });
+        });
+    });
+});
+
+app.post('/seller-dashboard', (req, res) => {
+    console.log("Received product data:", req.body); // Log incoming data
+
+    const productsFilePath = path.join(__dirname, 'products.json');
+    fs.readFile(productsFilePath, 'utf-8', (err, data) => {
+        if (err) {
+            console.error("Error reading file:", err);
+            return res.status(500).json({ error: 'Error reading product data.' });
+        }
+
+        let products = [];
+        if (data) products = JSON.parse(data);
+
+        const newProduct = { id: Date.now(), ...req.body };
+        products.push(newProduct);
+
+        fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
             if (err) {
-                return res.status(500).json({ error: 'An error occurred while saving user data.' });
+                console.error("Error writing file:", err);
+                return res.status(500).json({ error: 'Error saving product data.' });
             }
-            res.status(200).json({ message: 'User registered successfully!' });
+            console.log("Product added successfully:", newProduct);
+            res.status(200).json({ success: true, message: 'Product added successfully!', product: newProduct });
         });
     });
 });
