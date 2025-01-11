@@ -1,3 +1,14 @@
+let user_name = localStorage.getItem("user_name");
+
+let header = document.querySelector(".header")
+
+let userNameElement = document.createElement("h1");
+
+userNameElement.textContent = `Welcome, ${user_name}! you act as seller `;
+
+header.prepend(userNameElement);
+
+
 document.getElementById("addProductForm").addEventListener("submit", function (e) {
     e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
 

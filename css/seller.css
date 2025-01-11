@@ -76,8 +76,12 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+
 }
 
+nav ul li a:hover {
+text-decoration: underline;
+}
 .stats {
     display: flex;
     justify-content: space-around;

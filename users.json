@@ -1,6 +1,6 @@
 [
   {
-    "username": "waheed",
+    "username": "adidas",
     "email": "w55h44@gmail.com",
     "password": "123456789",
     "role": "seller"
@@ -12,121 +12,145 @@
     "role": "admin"
   },
   {
-    "username": "admineeeeeee",
+    "username": "mona ali",
     "email": "w55h44@gma.cooooooooom",
     "password": "123456789",
-    "panned": false
+    "banned": false,
+    "role":"customer"
   },
   {
     "username": "waheed",
     "email": "wdarwesh365@gmail.com",
     "password": "node server.js",
-    "panned": false
+    "banned": true
   },
   {
     "username": "basma",
     "email": "basma@gmail.com",
     "password": "112233445566",
-    "panned": false
+    "banned": false
   },
   {
     "username": "mohamed salah",
     "email": "mohamedsalah@gmail.com",
     "password": "11447700",
-    "panned": false
+    "banned": false
   },
   {
     "username": "Eman gomaa",
     "email": "ea@gmail.co",
     "password": "010123010",
-    "panned": false
+    "banned": false,
+    "role":"customer"
   },
   {
     "username": "salah",
     "email": "salah@gmail.co",
     "password": "14141414",
-    "panned": false
+    "banned": false
   },
   {
     "username": "alaa",
     "email": "alaaa@gma.co",
     "password": "123456789",
-    "panned": false
+    "banned": false
   },
   {
     "username": "hesham",
     "email": "hesham@gmail.com",
     "password": "12345666",
-    "panned": false
+    "banned": false
   },
   {
     "id": 1736532262999,
     "username": "ahly",
     "email": "Wahied.salaa7@gmail.com",
     "password": "123456789",
-    "panned": false
+    "banned": false
   },
   {
     "id": 1736532445040,
     "username": "osam",
     "email": "osg@gmail.vno",
     "password": "123123123",
-    "panned": false
+    "banned": false
   },
   {
     "id": 0,
     "username": "user1",
     "email": "Wahied.salaa7@gmail.com",
     "password": "123456789",
-    "panned": false
+    "banned": false
   },
   {
     "id": 1,
     "username": "oioi",
     "email": "Wahied.salaa7@gmail.com",
     "password": "123123123",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": 0,
     "username": "waheed22",
     "email": "w55h44@gmail.com",
     "password": "123123123",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": 0,
     "username": "salah",
     "email": "wsala2529@gmail.com",
     "password": "11223333",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": null,
     "username": "qwqwqe",
     "email": "alaaa@gma.co",
     "password": "11223311",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": 19,
     "username": "jeahan",
     "email": "jehan@gmail.com",
     "password": "112233112233",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": 19,
     "username": "wael",
     "email": "Wahied.salaa7@gmail.com",
     "password": "112233112233",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
   },
   {
     "id": 20,
     "username": "ahmed",
     "email": "alaaa@gma.co",
     "password": "11223311",
-    "panned": false
+    "banned": false
+    ,"role": "customer"
+
+  },
+  {
+    "id": 21,
+    "username": "hanaa",
+    "email": "hanaa@gmail.com",
+    "password": "11223311",
+    "banned": false,
+    "role": "customer"
   }
 ]

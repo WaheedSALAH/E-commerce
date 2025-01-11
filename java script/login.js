@@ -21,19 +21,26 @@ document.getElementById("login-form").addEventListener("submit", async function 
 
         // Redirect
         if (user.role === "admin") {
+            window.localStorage.setItem(("user_role"),user.role)
             window.location.href = "admin.html";
             
-        } else if (user.role === "customer") {
-            window.location.href = "../home.html";
         }
-        else if(user.panned === true){
+        else if(user.banned === true){
             messageDiv.innerHTML = `<p style="color: red;">you are panned.</p>`;
 
         }
+         else if (user.role === "customer") {
+            window.localStorage.setItem(("user_name"),user.username)
+            window.localStorage.setItem(("user_role"),user.role)
+            window.location.href = "../home.html";
+
+        }
+
         
         else if (user.role === "seller") {
+            window.localStorage.setItem(("user_name"),user.username)
+            window.localStorage.setItem(("user_role"),user.role)
             window.location.href = "seller-dashboard.html";
-        
         }
 
 

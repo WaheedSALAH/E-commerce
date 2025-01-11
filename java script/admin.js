@@ -17,6 +17,8 @@ fetch("../users.json").then((user)=>{
             <td>${user.id}</td>
             <td>${user.username}</td>
             <td>${user.email}</td>
+            <td>${user.password}</td>
+            <td>${user.banned}</td>
             <td>
                 <button onclick="deleteUser(${user.id})">Delete</button>
                 <button onclick="editUser(${user.id})">Edit</button>

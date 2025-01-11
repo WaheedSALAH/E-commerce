@@ -103,7 +103,8 @@ form.addEventListener('submit', async function (event) {
             username: username.value,
             email: email.value,
             password: password.value, // In production, never send plain text passwords
-            panned : false
+            banned : false,
+            role : "customer"
         };
 
         try {
