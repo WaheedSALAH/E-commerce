@@ -3,6 +3,39 @@ let products = [
     { id: 2, name: "Product B", price: 200 }
 ];
 
+
+
+
+
+
+fetch("../products.json").then((product)=>{
+    console.log(product)
+    let myData = product.json()
+    console.log(myData)
+    return myData;
+}).then((myData)=>{
+    const tableBody = document.querySelector("#products-table tbody");
+    tableBody.innerHTML = "";
+    myData.forEach(product => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.product_name}</td>
+            <td>${product.price} $</td>
+
+            <td class = "${product.id}">
+                <button onclick="deleteUser(${product.id})">Delete</button>
+                <button onclick="editUser(${product.id})">Edit</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+})
+
+
+
+
+
 fetch("../users.json").then((user)=>{
     console.log(user)
     let myData = user.json()
