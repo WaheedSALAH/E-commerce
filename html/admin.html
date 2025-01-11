@@ -9,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            
         }
         .section {
             margin-bottom: 40px;
@@ -28,6 +29,37 @@
         th {
             background-color: #f4f4f4;
         }
+        .form-container{
+            display: none;
+        }
+        .addProduct{
+            align-self: center;
+            color: black;
+        }
+        .addProductWrapper {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            height: 100px; /* Optional: adjust height as needed */
+            margin: 0; /* Optional: remove extra spacing */
+        }
+
+        /* Button-specific styles */
+        .add {
+            align-self: center; /* Ensures the button aligns within the flex container */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add:hover {
+            background-color: #0056b3;
+        }
     </style>
 
 </head>
@@ -42,17 +74,35 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
+                    <th>Permistion</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
-        <h3>Add Product</h3>
-        <form id="add-product-form">
-            <input type="text" id="product-name" placeholder="Product Name" required>
-            <input type="number" id="product-price" placeholder="Price" required>
-            <button type="submit">Add Product</button>
-        </form>
+
+        <h3 class="addProductWrapper" >
+            <button class="add" id="func_show_add_product">Add Product</button>
+        </h3>
+
+        <div class="form-container">
+            <form id="addProductForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+    
+                <label for="productDescription">Product Description:</label>
+                <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+    
+                <label for="productPrice">Product Price ($):</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+    
+                <label for="productImageLink">Product Image Link:</label>
+                <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
+    
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    
     </div>
 
     <div class="section" id="users-section">
@@ -70,8 +120,11 @@
             </thead>
             <tbody></tbody>
         </table>
-        <h3>Add User</h3>
-        <form id="add-user-form">
+
+        <h3 class="addProductWrapper" >
+            <button class="add" id="func_show_add_user">Add User</button>
+        </h3>
+            <form id="add-user-form">
             <input type="text" id="user-name" placeholder="User Name" required>
             <input type="email" id="user-email" placeholder="Email" required>
             <button type="submit">Add User</button>

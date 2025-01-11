@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Get user_name from localStorage
     let user_name = localStorage.getItem("user_name");
+    let role = localStorage.getItem("user_role");
     console.log(user_name);
 
     // Get the parent element containing the login/register links
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let removedItem = document.querySelector(".mybeRemoved");
     let logout = document.querySelector(".logout")
     // Replace the "mybeRemoved" div if user_name exists
-    if (user_name) {
+    if (user_name && role =="customer") {
         // Create a new element to display the user name
         let userNameElement = document.createElement("div");
         userNameElement.textContent = `Welcome, ${user_name}!`;

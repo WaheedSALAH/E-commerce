@@ -17,6 +17,7 @@ app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'html', 'login
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'html', 'register.html')));
 app.get('/product-details', (req, res) => res.sendFile(path.join(__dirname, 'html', 'product-details.html')));
 app.get('/seller-dashboard', (req, res) => res.sendFile(path.join(__dirname, 'html', 'seller-dashboard.html')));
+app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'html', 'admin.html')));
 
 // Handle POST request for user registration
 app.post('/register', (req, res) => {
@@ -76,6 +77,34 @@ app.post('/seller-dashboard', (req, res) => {
             }
             console.log("Product added successfully:", newProduct);
             res.status(200).json({ success: true, message: 'Product sent successfully! please wait for admin confirmation', product: newProduct });
+        });
+    });
+});
+
+
+app.post('/admin', (req, res) => {
+    console.log("Received product data:", req.body); // Log incoming data
+
+    const productsFilePath = path.join(__dirname, 'products.json');
+    fs.readFile(productsFilePath, 'utf-8', (err, data) => {
+        if (err) {
+            console.error("Error reading file:", err);
+            return res.status(500).json({ error: 'Error reading product data.' });
+        }
+
+        let products = [];
+        if (data) products = JSON.parse(data);
+
+        const newProduct = { id: Date.now(), ...req.body , product_permition : true };
+        products.push(newProduct);
+
+        fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+            if (err) {
+                console.error("Error writing file:", err);
+                return res.status(500).json({ error: 'Error saving product data.' });
+            }
+            console.log("Product added successfully:", newProduct);
+            res.status(200).json({ success: true, message: 'Product added successfully!', product: newProduct });
         });
     });
 });
