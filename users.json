@@ -16,7 +16,7 @@
     "email": "w55h44@gma.cooooooooom",
     "password": "123456789",
     "banned": false,
-    "role":"customer"
+    "role": "customer"
   },
   {
     "username": "waheed",
@@ -41,7 +41,7 @@
     "email": "ea@gmail.co",
     "password": "010123010",
     "banned": false,
-    "role":"customer"
+    "role": "customer"
   },
   {
     "username": "salah",
@@ -87,69 +87,110 @@
     "username": "oioi",
     "email": "Wahied.salaa7@gmail.com",
     "password": "123123123",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 0,
     "username": "waheed22",
     "email": "w55h44@gmail.com",
     "password": "123123123",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 0,
     "username": "salah",
     "email": "wsala2529@gmail.com",
     "password": "11223333",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": null,
     "username": "qwqwqe",
     "email": "alaaa@gma.co",
     "password": "11223311",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 19,
     "username": "jeahan",
     "email": "jehan@gmail.com",
     "password": "112233112233",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 19,
     "username": "wael",
     "email": "Wahied.salaa7@gmail.com",
     "password": "112233112233",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 20,
     "username": "ahmed",
     "email": "alaaa@gma.co",
     "password": "11223311",
-    "banned": false
-    ,"role": "customer"
-
+    "banned": false,
+    "role": "customer"
   },
   {
     "id": 21,
     "username": "hanaa",
     "email": "hanaa@gmail.com",
     "password": "11223311",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 22,
+    "username": "waheed asc",
+    "email": "w55h44@gmail.com",
+    "password": "11223344",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 23,
+    "username": "menna",
+    "email": "enna@gmai.com",
+    "password": "11223344",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 24,
+    "username": "ahmed ramadan",
+    "email": "ah_rm@gmail.com",
+    "password": "11223344",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 25,
+    "username": "asala",
+    "email": "asala@gmail.com",
+    "password": "11223311",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 26,
+    "username": "adel shakal",
+    "email": "adel@gmail.com",
+    "password": "11223344",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 27,
+    "username": "emam ashour",
+    "email": "emm@gmail.com",
+    "password": "11223344",
     "banned": false,
     "role": "customer"
   }

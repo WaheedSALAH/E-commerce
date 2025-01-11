@@ -67,7 +67,7 @@ app.post('/seller-dashboard', (req, res) => {
         let products = [];
         if (data) products = JSON.parse(data);
 
-        const newProduct = { id: Date.now(), ...req.body , product_permition : false };
+        const newProduct = { id: Date.now(), ...req.body , product_permition : 'waiting' , publisher:'seller' };
         products.push(newProduct);
 
         fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
@@ -95,7 +95,7 @@ app.post('/admin', (req, res) => {
         let products = [];
         if (data) products = JSON.parse(data);
 
-        const newProduct = { id: Date.now(), ...req.body , product_permition : true };
+        const newProduct = { id: Date.now(), ...req.body , product_permition : true , publisher:'admin' };
         products.push(newProduct);
 
         fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {

@@ -32,6 +32,9 @@
         .form-container{
             display: none;
         }
+        #registrationForm{
+            display: none;
+        }
         .addProduct{
             align-self: center;
             color: black;
@@ -124,10 +127,27 @@
         <h3 class="addProductWrapper" >
             <button class="add" id="func_show_add_user">Add User</button>
         </h3>
-            <form id="add-user-form">
-            <input type="text" id="user-name" placeholder="User Name" required>
-            <input type="email" id="user-email" placeholder="Email" required>
-            <button type="submit">Add User</button>
+
+        <form id="registrationForm" action="home.html" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" >
+            <div class="error" id="usernameError"></div>
+    
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter your email" >
+            <div class="error" id="emailError"></div>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" >
+            <div class="error" id="passwordError"></div>
+    
+    
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password" >
+            <div class="error" id="confirmPasswordError"></div>
+    
+            <button type="submit">Register</button>
+    
         </form>
     </div>
 

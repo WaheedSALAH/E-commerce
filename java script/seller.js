@@ -1,3 +1,58 @@
+fetch("../products.json").then((product)=>{
+    console.log(product)
+    let myData = product.json()
+    console.log(myData)
+    return myData;
+
+
+    
+}).then((myData)=>{
+    const tableBody = document.querySelector("#products-table tbody");
+    tableBody.innerHTML = "";
+    myData.forEach(product => {
+        if(product.product_permition == true )product.product_permition="approved";
+        else if(product.product_permition == 'waiting')product.product_permition="pending"
+        else product.product_permition="rejected";
+        if (product.publisher == 'seller')
+        {
+
+        row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.product_name}</td>
+            <td>${product.price} $</td>
+            <td>${product.product_permition}</td
+        `;
+        tableBody.appendChild(row);
+
+
+        }
+      
+    });
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let user_name = localStorage.getItem("user_name");
 
 let header = document.querySelector(".header")
@@ -31,6 +86,10 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         img_url: productImageLink,
     };
 
+
+
+
+
     // إرسال البيانات للـ backend
     fetch('/seller-dashboard', {
         method: 'POST',
@@ -48,7 +107,8 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         .then(data => {
             if (data.success) {
                 alert("Product sent successfully!  please wait for admin confirmation");
-                document.getElementById("addProductForm").reset(); // Reset the form
+                // document.getElementById("addProductForm").reset(); // Reset the 
+                location.reload()
             } else {
                 alert(data.error || "Failed to add product.");
             }

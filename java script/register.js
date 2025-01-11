@@ -1,4 +1,5 @@
 // Get the form and input fields
+
 const form = document.getElementById('registrationForm');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -119,10 +120,12 @@ form.addEventListener('submit', async function (event) {
             if (response.ok) {
                 alert('User registered successfully!');
                 form.reset(); // Reset form after successful submission
-                username.style.border = '';
-                email.style.border = '';
-                password.style.border = '';
-                confirmPassword.style.border = '';
+                // username.style.border = '';
+                // email.style.border = '';
+                // password.style.border = '';
+                // confirmPassword.style.border = '';
+                location.reload()
+
             } else {
                 alert('Failed to register user.');
             }
@@ -132,3 +135,6 @@ form.addEventListener('submit', async function (event) {
         }
     }
 });
+
+
+

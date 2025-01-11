@@ -10,6 +10,7 @@ fetch("../products.json").then((product)=>{
     tableBody.innerHTML = "";
     myData.forEach(product => {
         const row = document.createElement("tr");
+        if(product.publisher =='admin')product.product_permition = 'by admin'
         row.innerHTML = `
             <td>${product.id}</td>
             <td>${product.product_name}</td>
@@ -119,3 +120,22 @@ fetch("../users.json").then((user)=>{
 
 
 
+let hidden_form2 = document.querySelector("#registrationForm");
+let showbtn2 = document.querySelector("#func_show_add_user");
+
+showbtn2.addEventListener('click', function () {
+    hidden_form2.style.display = "block"; // Correctly set the display property
+    hidden_form2.scrollIntoView({ behavior: "smooth" }); // Scroll to the form
+
+    
+});
+
+const file = './register.js';
+
+import(file)
+  .then((module) => {
+    console.log(`Loaded module from ${file}`, module);
+  })
+  .catch((error) => {
+    console.error(`Failed to load module from ${file}:`, error);
+  });
