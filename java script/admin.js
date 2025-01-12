@@ -23,8 +23,29 @@ fetch("../products.json").then((product)=>{
             </td>
         `;
         tableBody.appendChild(row);
+        let rowOfstat = document.querySelector('#statOfprod')
+        rowOfstat.innerHTML =`<td>${myData.length}</td>`
     });
 })
+
+let show_prod = document.querySelector("#prod")
+let hidden_prod = document.querySelector("#products-section")
+
+show_prod.addEventListener('click', function () {
+    hidden_user.style.display = "none";   
+    hidden_prod.style.display = "block";   
+});
+
+
+let show_users = document.querySelector("#userss")
+let hidden_user = document.querySelector("#users-section")
+
+show_users.addEventListener('click', function () {
+    hidden_prod.style.display = "none";   
+    hidden_user.style.display = "block";   
+});
+
+
 
 
 let hidden_form = document.querySelector(".form-container");
@@ -36,6 +57,7 @@ showbtn.addEventListener('click', function () {
 
     
 });
+
 
 
 
@@ -110,11 +132,26 @@ fetch("../users.json").then((user)=>{
             <td>${user.password}</td>
             <td>${user.banned}</td>
             <td>
-                <button onclick="deleteUser(${user.id})">Delete</button>
-                <button onclick="editUser(${user.id})">Edit</button>
+                <button class = 'btn_del' onclick="deleteUser(${user.id})">Delete</button>
+                <button class = 'btn_edit' onclick="editUser(${user.id})">Edit</button>
             </td>
         `;
+
+
+        // btn_del = document.querySelector('.btn_del');
+        // btn_edit = document.querySelector('.btn_edit')
+
+        // if (user.username == 'admin' && user.role == 'admin'){
+        //     btn_del.style.display = "none"
+        //     btn_edit.style.display = "none"
+
+        // }
+
+
         tableBody.appendChild(row);
+        let rowOfstat = document.querySelector('#statOfuser')
+        // console.log(product.lenght)
+        rowOfstat.innerHTML =`<td>${myData.length}</td>`
     });
 })
 

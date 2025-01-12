@@ -193,5 +193,21 @@
     "password": "11223344",
     "banned": false,
     "role": "customer"
+  },
+  {
+    "id": 28,
+    "username": "iti",
+    "email": "iti@gmail.com",
+    "password": "11223311",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 29,
+    "username": "mona",
+    "email": "nkk@gmail.com",
+    "password": "11223311",
+    "banned": false,
+    "role": "customer"
   }
 ]

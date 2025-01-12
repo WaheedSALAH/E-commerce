@@ -32,27 +32,6 @@ fetch("../products.json").then((product)=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let user_name = localStorage.getItem("user_name");
 
 let header = document.querySelector(".header")

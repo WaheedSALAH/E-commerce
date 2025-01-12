@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    
+}
+.section {
+    margin-bottom: 40px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+.form-container{
+    display: none;
+}
+#registrationForm{
+    display: none;
+}
+.addProduct{
+    align-self: center;
+    color: black;
+}
+.addProductWrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Optional: adjust height as needed */
+    margin: 0; /* Optional: remove extra spacing */
+}
+
+/* Button-specific styles */
+.add {
+    align-self: center; /* Ensures the button aligns within the flex container */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: #0056b3;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    flex-direction: column;
+    margin-bottom: 30px;
+        
+}
+header h1{
+    margin: auto;
+    display: flex;
+    display: flexbox;
+    flex-direction: row;
+
+    
+}
+.section h2{
+    margin: auto;
+    align-self: center;
+    background-color: #007BFF;
+    
+}
+#products-section{
+    display: none;
+}
+
+#users-section{
+    display: none;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+padding: 20px;
+}
+
+
+#tableOfstat{
+    margin: auto;
+    align-self: center;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+
+}
+
+#tableOfstat th{
+    text-align: center;
+    align-content: center;
+    background-color: #212a22; /* Header background color */
+    color: white; /* Header text color */
+    
+}
+#tableOfstat td{
+    text-align: center;
+    align-content: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+th,td{
+    text-align: center;
+    align-content: center;
+}
+
+.statics{
+    margin-bottom: 30px;
+}
