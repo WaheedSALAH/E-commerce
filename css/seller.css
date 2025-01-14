@@ -32,11 +32,23 @@ input, textarea, button {
     border: 1px solid #ccc;
 }
 
-button {
-    background-color: #4CAF50;
+.addProductWrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Optional: adjust height as needed */
+    margin: 0; /* Optional: remove extra spacing */
+}
+.add {
+    align-self: center; /* Ensures the button aligns within the flex container */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -109,4 +121,22 @@ table, th, td {
 th, td {
     padding: 12px;
     text-align: center;
+}
+
+#prod{
+    text-align: center;
+}
+.form-container{
+    display: none;
+}
+.section{
+    display: none;
+}
+
+#tableOfstat th{
+    text-align: center;
+    align-content: center;
+    background-color: #212a22; /* Header background color */
+    color: white; /* Header text color */
+    
 }

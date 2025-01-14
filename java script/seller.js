@@ -1,3 +1,21 @@
+let show_prod = document.querySelector("#prod")
+let hidden_prod = document.querySelector("#products-section")
+
+show_prod.addEventListener('click', function () {
+    hidden_prod.style.display = "block";   
+});
+
+
+let hidden_form = document.querySelector(".form-container");
+let showbtn = document.querySelector("#func_show_add_product");
+
+showbtn.addEventListener('click', function () {
+    hidden_form.style.display = "block"; // Correctly set the display property
+    hidden_form.scrollIntoView({ behavior: "smooth" }); // Scroll to the form
+
+    
+});
+
 fetch("../products.json").then((product)=>{
     console.log(product)
     let myData = product.json()
@@ -9,13 +27,23 @@ fetch("../products.json").then((product)=>{
 }).then((myData)=>{
     const tableBody = document.querySelector("#products-table tbody");
     tableBody.innerHTML = "";
+    let count1 = 0;
+    let count2 = 0;
     myData.forEach(product => {
-        if(product.product_permition == true )product.product_permition="approved";
+        if(product.product_permition == true && product.publisher == 'seller' )
+            {
+                product.product_permition="approved";
+                count2 +=1
+                let statOforder = document.querySelector('#statOforder')
+                statOforder.innerHTML =`<td>${count2}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
+
+            }
         else if(product.product_permition == 'waiting')product.product_permition="pending"
         else product.product_permition="rejected";
+
         if (product.publisher == 'seller')
         {
-
+        count1 +=1;
         row = document.createElement("tr");
         row.innerHTML = `
             <td>${product.id}</td>
@@ -25,11 +53,15 @@ fetch("../products.json").then((product)=>{
         `;
         tableBody.appendChild(row);
 
-
+        let rowOfstat = document.querySelector('#statOfprod')
+        rowOfstat.innerHTML =`<td>${count1}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
         }
       
     });
 })
+
+// let statOforder = document.querySelector('#statOforder')
+// statOforder.innerHTML =`<td>${product.product_permition.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
 
 
 let user_name = localStorage.getItem("user_name");

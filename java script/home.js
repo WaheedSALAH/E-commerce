@@ -46,7 +46,7 @@ fetch('products.json')
             const productDiv = document.createElement('div');
             
             productDiv.classList.add('product-card');
-            if (product.product_permition == false) 
+            if (product.product_permition == false || product.product_permition == "waiting") 
             {
                 console.log('not permitted')
                 return;

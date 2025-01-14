@@ -73,12 +73,7 @@ header h1{
 
     
 }
-.section h2{
-    margin: auto;
-    align-self: center;
-    background-color: #007BFF;
-    
-}
+
 #products-section{
     display: none;
 }
@@ -127,3 +122,4 @@ th,td{
 .statics{
     margin-bottom: 30px;
 }
+

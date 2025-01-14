@@ -1,5 +1,4 @@
-
-
+//////////////////////////////////////////////////////عشااااااااااان اعرض المنتجات \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 fetch("../products.json").then((product)=>{
     console.log(product)
     let myData = product.json()
@@ -10,24 +9,34 @@ fetch("../products.json").then((product)=>{
     tableBody.innerHTML = "";
     myData.forEach(product => {
         const row = document.createElement("tr");
-        if(product.publisher =='admin')product.product_permition = 'by admin'
+        if(product.publisher == 'admin')product.product_permition = 'by admin'
+        if(product.publisher == 'seller')product.product_permition = 'by seller'
         row.innerHTML = `
             <td>${product.id}</td>
             <td>${product.product_name}</td>
             <td>${product.price} $</td>
             <td>${product.product_permition}</td>
 
-            <td class = "${product.id}">
-                <button onclick="deleteUser(${product.id})">Delete</button>
-                <button onclick="editUser(${product.id})">Edit</button>
+            <td>
+                <button id ='${product.id}'>Delete</button>
+                <button class ='${product.id}'>Edit</button>
             </td>
         `;
+        console.log(product.id)
+        let id = document.getElementById(`${product.id}`)
+        console.log(id)
+        // console.log(document.getElementById('${product.id}'))
         tableBody.appendChild(row);
         let rowOfstat = document.querySelector('#statOfprod')
-        rowOfstat.innerHTML =`<td>${myData.length}</td>`
+        rowOfstat.innerHTML =`<td>${myData.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
     });
 })
+/////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+
+
+
+////////////////////////////////////////////////////////زراير الظهور والاخفاء والانتقال\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 let show_prod = document.querySelector("#prod")
 let hidden_prod = document.querySelector("#products-section")
 
@@ -58,19 +67,29 @@ showbtn.addEventListener('click', function () {
     
 });
 
+let hidden_form2 = document.querySelector("#registrationForm");
+let showbtn2 = document.querySelector("#func_show_add_user");
+
+showbtn2.addEventListener('click', function () {
+    hidden_form2.style.display = "block"; 
+    hidden_form2.scrollIntoView({ behavior: "smooth" }); 
+
+    
+});
+
+/////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+//////////////////////////////////////////////////////// عشان اضيف المنتج من خلال الادمن \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 document.getElementById("addProductForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+    e.preventDefault(); 
 
-    // جمع البيانات
     const productName = document.getElementById("productName").value.trim();
     const productDescription = document.getElementById("productDescription").value.trim();
     const productPrice = document.getElementById("productPrice").value.trim();
     const productImageLink = document.getElementById("productImageLink").value.trim();
 
-    // التحقق من صحة البيانات
     if (!productName || !productDescription || !productPrice || !productImageLink) {
         alert("All fields are required!");
         return;
@@ -83,7 +102,6 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         img_url: productImageLink,
     };
     
-    // إرسال البيانات للـ backend
     fetch('/admin', {
         method: 'POST',
         headers: {
@@ -113,8 +131,12 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
     
 });
 
+///////////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+
+
+////////////////////////////////////////////////////////////// عشان اضيف اليوزرس\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 fetch("../users.json").then((user)=>{
     console.log(user)
     let myData = user.json()
@@ -138,34 +160,19 @@ fetch("../users.json").then((user)=>{
         `;
 
 
-        // btn_del = document.querySelector('.btn_del');
-        // btn_edit = document.querySelector('.btn_edit')
-
-        // if (user.username == 'admin' && user.role == 'admin'){
-        //     btn_del.style.display = "none"
-        //     btn_edit.style.display = "none"
-
-        // }
-
-
         tableBody.appendChild(row);
         let rowOfstat = document.querySelector('#statOfuser')
-        // console.log(product.lenght)
-        rowOfstat.innerHTML =`<td>${myData.length}</td>`
+        rowOfstat.innerHTML =`<td>${myData.length}</td>` // <<<<<<<<<<<<<<<<<<< دا اللى بحط فيه عدد اليوزرس
+
     });
 })
 
 
+///////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-let hidden_form2 = document.querySelector("#registrationForm");
-let showbtn2 = document.querySelector("#func_show_add_user");
 
-showbtn2.addEventListener('click', function () {
-    hidden_form2.style.display = "block"; // Correctly set the display property
-    hidden_form2.scrollIntoView({ behavior: "smooth" }); // Scroll to the form
 
-    
-});
+/////////////////////////////////////// هنا كسلت واستدعيت ملف الريجيستر بتاع اليوزر وحطيته عندمن \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 const file = './register.js';
 
@@ -176,3 +183,4 @@ import(file)
   .catch((error) => {
     console.error(`Failed to load module from ${file}:`, error);
   });
+////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

@@ -7,21 +7,37 @@
     <link rel="stylesheet" href="../css/seller.css">
 </head>
 <body>
+
+    
     <div class="dashboard">
         <header class="header">
             <nav>
                 <ul>
                     <li><a href="../home.html">Home</a></li>
                     <li><a href="#">Orders</a></li>
-                    <li><a href="#">Products</a></li>
+                    <li id="prod"><a href="#">Products</a></li>
                     <li><a href="login.html">logout</a></li>
                 </ul>
             </nav>
         </header>
 
-        
+        <div class="statics">
+            <table id="tableOfstat">
+                <tr>
+                    <th>num of produts</th>
+                    <th>aproved</th>
+                    <th>orderd selled</th>
+                </tr>
+                <tr id="statics_child">
+                    <td id="statOfprod"></td>
+                    <td id="statOforder"></td>
+                </tr>
+            </table>
+        </div>
         <div class="section" id="products-section">
-            <h2>Products</h2>
+            <div id="prod">
+                <h2>Products</h2>
+            </div>
             <table id="products-table">
                 <thead>
                     <tr>
@@ -32,6 +48,9 @@
                     </tr>
                 </thead>
                 <tbody></tbody>
+                <h3 class="addProductWrapper" >
+                    <button class="add" id="func_show_add_product">Add Product</button>
+                </h3>
             </table>
 
 
@@ -51,7 +70,7 @@
             <label for="productImageLink">Product Image Link:</label>
             <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
 
-            <button type="submit">Add Product</button>
+            <button class="add" type="submit">Add Product</button>
         </form>
     </div>
 

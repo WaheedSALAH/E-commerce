@@ -119,11 +119,7 @@ form.addEventListener('submit', async function (event) {
 
             if (response.ok) {
                 alert('User registered successfully!');
-                form.reset(); // Reset form after successful submission
-                // username.style.border = '';
-                // email.style.border = '';
-                // password.style.border = '';
-                // confirmPassword.style.border = '';
+                form.reset();
                 location.reload()
 
             } else {
