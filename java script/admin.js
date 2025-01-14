@@ -89,6 +89,9 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
     const productDescription = document.getElementById("productDescription").value.trim();
     const productPrice = document.getElementById("productPrice").value.trim();
     const productImageLink = document.getElementById("productImageLink").value.trim();
+    const productImageLink2 = document.getElementById("productImageLink2").value.trim();
+    const productImageLink3 = document.getElementById("productImageLink3").value.trim();
+    const productImageLink4 = document.getElementById("productImageLink4").value.trim();
 
     if (!productName || !productDescription || !productPrice || !productImageLink) {
         alert("All fields are required!");
@@ -100,6 +103,9 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         description: productDescription,
         price: parseFloat(productPrice),
         img_url: productImageLink,
+        img_url2:productImageLink2,
+        img_url3:productImageLink3,
+        img_url4:productImageLink4
     };
     
     fetch('/admin', {
@@ -136,7 +142,7 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
 
 
 
-////////////////////////////////////////////////////////////// عشان اضيف اليوزرس\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////////////////////// عشان اعرض اليوزرس\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 fetch("../users.json").then((user)=>{
     console.log(user)
     let myData = user.json()
@@ -153,6 +159,7 @@ fetch("../users.json").then((user)=>{
             <td>${user.email}</td>
             <td>${user.password}</td>
             <td>${user.banned}</td>
+            <td>${user.role}</td>
             <td>
                 <button class = 'btn_del' onclick="deleteUser(${user.id})">Delete</button>
                 <button class = 'btn_edit' onclick="editUser(${user.id})">Edit</button>

@@ -60,6 +60,9 @@ fetch('products.json')
                 <div id="images">
 
                 <img class="main-pic" src="${product.img_url}" alt="${product.product_name}">
+                <img class="extra" src="${product.img_url2}" alt="${product.product_name}">
+                <img class="extra" src="${product.img_url3}" alt="${product.product_name}">
+                <img class="extra" src="${product.img_url4}" alt="${product.product_name}">
                 </div>
 
                 <h3>${product.product_name}</h3>

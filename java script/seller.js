@@ -83,6 +83,9 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
     const productDescription = document.getElementById("productDescription").value.trim();
     const productPrice = document.getElementById("productPrice").value.trim();
     const productImageLink = document.getElementById("productImageLink").value.trim();
+    const productImageLink2 = document.getElementById("productImageLink2").value.trim();
+    const productImageLink3 = document.getElementById("productImageLink3").value.trim();
+    const productImageLink4 = document.getElementById("productImageLink4").value.trim();
 
     // التحقق من صحة البيانات
     if (!productName || !productDescription || !productPrice || !productImageLink) {
@@ -95,6 +98,9 @@ document.getElementById("addProductForm").addEventListener("submit", function (e
         description: productDescription,
         price: parseFloat(productPrice),
         img_url: productImageLink,
+        img_url2:productImageLink2,
+        img_url3:productImageLink3,
+        img_url4:productImageLink4
     };
 
 
