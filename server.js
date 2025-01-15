@@ -109,6 +109,80 @@ app.post('/admin', (req, res) => {
     });
 });
 
+// Admin - Delete Product
+app.delete('/admin/delete-product/:id', (req, res) => {
+    const productsFilePath = path.join(__dirname, 'products.json');
+    fs.readFile(productsFilePath, 'utf-8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error reading product data.' });
+
+        let products = JSON.parse(data);
+        products = products.filter(product => product.id !== parseInt(req.params.id));
+
+        fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: 'Error deleting product.' });
+            res.json({ success: true });
+        });
+    });
+});
+
+// Admin - Edit Product
+app.put('/admin/edit-product/:id', (req, res) => {
+    const productsFilePath = path.join(__dirname, 'products.json');
+    fs.readFile(productsFilePath, 'utf-8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error reading product data.' });
+
+        let products = JSON.parse(data);
+        const productIndex = products.findIndex(p => p.id === parseInt(req.params.id));
+
+        if (productIndex !== -1) {
+            products[productIndex] = req.body; // Update the product
+            fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+                if (err) return res.status(500).json({ error: 'Error updating product.' });
+                res.json({ success: true });
+            });
+        } else {
+            res.status(404).json({ error: 'Product not found.' });
+        }
+    });
+});
+
+// Admin - Delete User
+app.delete('/admin/delete-user/:id', (req, res) => {
+    const usersFilePath = path.join(__dirname, 'users.json');
+    fs.readFile(usersFilePath, 'utf-8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error reading users data.' });
+
+        let users = JSON.parse(data);
+        users = users.filter(user => user.id !== parseInt(req.params.id));
+
+        fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: 'Error deleting user.' });
+            res.json({ success: true });
+        });
+    });
+});
+
+// Admin - Edit User
+app.put('/admin/edit-user/:id', (req, res) => {
+    const usersFilePath = path.join(__dirname, 'users.json');
+    fs.readFile(usersFilePath, 'utf-8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error reading users data.' });
+
+        let users = JSON.parse(data);
+        const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
+
+        if (userIndex !== -1) {
+            users[userIndex] = req.body; // Update the user
+            fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), (err) => {
+                if (err) return res.status(500).json({ error: 'Error updating user.' });
+                res.json({ success: true });
+            });
+        } else {
+            res.status(404).json({ error: 'User not found.' });
+        }
+    });
+});
+
 // Start the server
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');

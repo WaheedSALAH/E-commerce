@@ -1,3 +1,4 @@
+// location.reload()
 //////////////////////////////////////////////////////عشااااااااااان اعرض المنتجات \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 fetch("../products.json").then((product)=>{
     console.log(product)
@@ -57,87 +58,32 @@ show_users.addEventListener('click', function () {
 
 
 
-let hidden_form = document.querySelector(".form-container");
+// let hidden_form = document.querySelector("#addProductForm");
 let showbtn = document.querySelector("#func_show_add_product");
 
 showbtn.addEventListener('click', function () {
-    hidden_form.style.display = "block"; // Correctly set the display property
-    hidden_form.scrollIntoView({ behavior: "smooth" }); // Scroll to the form
+    // hidden_form.style.display = "block"; // Correctly set the display property
+    // hidden_form.scrollIntoView({ behavior: "smooth" }); // Scroll to the form
+    location.href ='../html/add_prod_for_admin.htm'
 
     
 });
 
-let hidden_form2 = document.querySelector("#registrationForm");
+// let hidden_form2 = document.querySelector("#registrationForm");
 let showbtn2 = document.querySelector("#func_show_add_user");
 
 showbtn2.addEventListener('click', function () {
-    hidden_form2.style.display = "block"; 
-    hidden_form2.scrollIntoView({ behavior: "smooth" }); 
+
+    location.href ='../html/add_user_for_admin.htm'
+
+    // hidden_form2.style.display = "block"; 
+    // hidden_form2.scrollIntoView({ behavior: "smooth" }); 
 
     
 });
 
 /////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
-//////////////////////////////////////////////////////// عشان اضيف المنتج من خلال الادمن \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-document.getElementById("addProductForm").addEventListener("submit", function (e) {
-    e.preventDefault(); 
-
-    const productName = document.getElementById("productName").value.trim();
-    const productDescription = document.getElementById("productDescription").value.trim();
-    const productPrice = document.getElementById("productPrice").value.trim();
-    const productImageLink = document.getElementById("productImageLink").value.trim();
-    const productImageLink2 = document.getElementById("productImageLink2").value.trim();
-    const productImageLink3 = document.getElementById("productImageLink3").value.trim();
-    const productImageLink4 = document.getElementById("productImageLink4").value.trim();
-
-    if (!productName || !productDescription || !productPrice || !productImageLink) {
-        alert("All fields are required!");
-        return;
-    }
-
-    const productData = {
-        product_name: productName,
-        description: productDescription,
-        price: parseFloat(productPrice),
-        img_url: productImageLink,
-        img_url2:productImageLink2,
-        img_url3:productImageLink3,
-        img_url4:productImageLink4
-    };
-    
-    fetch('/admin', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(productData),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                alert("Product added successfully!");
-                location.reload()
-                document.getElementById("addProductForm").reset(); // Reset the form
-            } else {
-                alert(data.error || "Failed to add product.");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("An error occurred while adding the product.");
-        });
-    
-});
-
-///////////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
@@ -162,7 +108,7 @@ fetch("../users.json").then((user)=>{
             <td>${user.role}</td>
             <td>
                 <button class = 'btn_del' onclick="deleteUser(${user.id})">Delete</button>
-                <button class = 'btn_edit' onclick="editUser(${user.id})">Edit</button>
+                <button class = 'btn_user_edit' onclick="editUser(${user.id})">Edit</button>
             </td>
         `;
 
@@ -177,17 +123,215 @@ fetch("../users.json").then((user)=>{
 
 ///////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+////////////////////////////////////////////////////// عشااااااااااان اعرض المنتجات \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+fetch("../products.json").then((product) => {
+    console.log(product)
+    let myData = product.json()
+    console.log(myData)
+    return myData;
+}).then((myData) => {
+    const tableBody = document.querySelector("#products-table tbody");
+    tableBody.innerHTML = "";
+    myData.forEach(product => {
+        const row = document.createElement("tr");
+        if (product.publisher == 'admin') product.product_permition = 'by admin'
+        if (product.publisher == 'seller') product.product_permition = 'by seller'
+        row.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.product_name}</td>
+            <td>${product.price} $</td>
+            <td>${product.product_permition}</td>
+
+            <td>
+                <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    let rowOfstat = document.querySelector('#statOfprod');
+    rowOfstat.innerHTML = `<td>${myData.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المنتجات
+});
+
+////////////////////////////////////////////////////////////// Edit Product
+document.querySelector("#products-table tbody").addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("btn_edit")) {
+        let hidden_form3 = document.querySelector('#editProductForm');
+        hidden_form3.style.display = "block";
+        hidden_form3.scrollIntoView({ behavior: "smooth" });
+    }
+});
+
+
+function editProduct(id) {
+    // Fetch the product by id and populate the form
+    fetch(`../products.json`)
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById("productName").value = product.product_name;
+                document.getElementById("productDescription").value = product.description;
+                document.getElementById("productPrice").value = product.price;
+                document.getElementById("productImageLink").value = product.img_url;
+                document.getElementById("productImageLink2").value = product.img_url2;
+                document.getElementById("productImageLink3").value = product.img_url3;
+                document.getElementById("productImageLink4").value = product.img_url4;
+
+                // Modify form submission to handle edit
+                document.getElementById("editProductForm").onsubmit = function (e) {
+                    e.preventDefault();
+                    const updatedProduct = {
+                        id: product.id, // Keep the same ID for the product
+                        product_name: document.getElementById("productName").value,
+                        description: document.getElementById("productDescription").value,
+                        price: parseFloat(document.getElementById("productPrice").value),
+                        img_url: document.getElementById("productImageLink").value,
+                        img_url2: document.getElementById("productImageLink2").value,
+                        img_url3: document.getElementById("productImageLink3").value,
+                        img_url4: document.getElementById("productImageLink4").value
+                    };
+                    let confirmation = confirm("are u sure")
+                    if(!confirmation)return;
+                    fetch(`/admin/edit-product/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updatedProduct),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert("Product updated successfully!");
+                                location.reload();
+                            } else {
+                                alert(data.error || "Failed to update product.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("An error occurred while updating the product.");
+                        });
+                };
+            }
+        });
+}
+
+////////////////////////////////////////////////////////////// Delete Product
+function deleteProduct(id) {
+    let confirmation = confirm("are u sure")
+    if(!confirmation)return;
+    fetch(`/admin/delete-product/${id}`, {
+        method: 'DELETE',
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Product deleted successfully!");
+                location.reload();
+            } else {
+                alert(data.error || "Failed to delete product.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while deleting the product.");
+        });
+}
+/////////////////////////////////////////////////////////// Delete User
+function deleteUser(id) {
+    let confirmation = confirm("are u sure")
+    if(!confirmation)return;
+    fetch(`/admin/delete-user/${id}`, {
+        method: 'DELETE',
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("User deleted successfully!");
+                location.reload();
+            } else {
+                alert(data.error || "Failed to delete user.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while deleting the user.");
+        });
+}
+
+/////////////////////////////////////////////////////////// Edit User
+document.querySelector("#users-table tbody").addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("btn_user_edit")) {
+        let hidden_form3 = document.querySelector('#editForm');
+        hidden_form3.style.display = "block";
+        hidden_form3.scrollIntoView({ behavior: "smooth" });
+    }
+});
+
+function editUser(id) {
+    fetch(`../users.json`)
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(u => u.id === id);
+            if (user) {
+                document.getElementById("username").value = user.username;
+                document.getElementById("email").value = user.email;
+                document.getElementById("password").value = user.password;
+                document.getElementById("role").value = user.role;
+                document.getElementById("banned").value = user.banned;
+
+                // Modify form submission to handle edit
+                document.getElementById("editForm").onsubmit = function (e) {
+                    
+                    e.preventDefault();
+                    const updatedUser = {
+                        id: user.id, // Keep the same ID for the user
+                        username: document.getElementById("username").value,
+                        email: document.getElementById("email").value,
+                        password: document.getElementById("password").value,
+                        role: document.getElementById("role").value,
+                        banned: document.getElementById("banned").value
+                    };
+                     let confirmation = confirm("are u sure")
+                    if(!confirmation)return;
+                    fetch(`/admin/edit-user/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updatedUser),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert("User updated successfully!");
+                                location.reload();
+                            } else {
+                                alert(data.error || "Failed to update user.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("An error occurred while updating the user.");
+                        });
+                };
+            }
+        });
+}
 
 
 /////////////////////////////////////// هنا كسلت واستدعيت ملف الريجيستر بتاع اليوزر وحطيته عندمن \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-const file = './register.js';
+// const file = './register.js';
 
-import(file)
-  .then((module) => {
-    console.log(`Loaded module from ${file}`, module);
-  })
-  .catch((error) => {
-    console.error(`Failed to load module from ${file}:`, error);
-  });
+// import(file)
+//   .then((module) => {
+//     console.log(`Loaded module from ${file}`, module);
+//   })
+//   .catch((error) => {
+//     console.error(`Failed to load module from ${file}:`, error);
+//   });
 ////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

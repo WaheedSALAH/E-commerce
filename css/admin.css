@@ -21,10 +21,18 @@ th, td {
 th {
     background-color: #f4f4f4;
 }
-.form-container{
+#addProductForm{
     display: none;
 }
+
+#editProductForm{
+    display: none;
+}
+
 #registrationForm{
+    display: none;
+}
+#editForm{
     display: none;
 }
 .addProduct{
@@ -32,6 +40,14 @@ th {
     color: black;
 }
 .addProductWrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Optional: adjust height as needed */
+    margin: 0; /* Optional: remove extra spacing */
+}
+
+.adduserWrapper {
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
@@ -123,3 +139,6 @@ th,td{
     margin-bottom: 30px;
 }
 
+#editProductForm h1{
+    color: #007BFF;
+}

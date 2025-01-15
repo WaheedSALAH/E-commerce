@@ -6,6 +6,8 @@
         <title>Admin Dashboard</title>
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/admin.css">
+        <script defer src="../java script/admin.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -33,6 +35,7 @@
         </table>
     </div>
     <div class="section" id="products-section">
+        
         <table id="products-table">
             <thead>
                 <tr>
@@ -50,31 +53,35 @@
         </table>
 
 
-        <div class="form-container">
-            <form id="addProductForm">
-                <label for="productName">Product Name:</label>
-                <input type="text" id="productName" name="productName" required>
+        <!-- <div class="form-container"> -->
+            <div>
+                <form id="editProductForm">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+        
+                    <label for="productDescription">Product Description:</label>
+                    <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+        
+                    <label for="productPrice">Product Price ($):</label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+        
+                    <label for="productImageLink">Product Image Link:</label>
+                    <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
     
-                <label for="productDescription">Product Description:</label>
-                <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+                    <label for="productImageLink2">you must add extra img:</label>
+                    <input type="url" id="productImageLink2" name="productImageLink2" placeholder="https://example.com/image.jpg" required >
+        
+                    <input type="url" id="productImageLink3" name="productImageLink3" placeholder="https://example.com/image.jpg" required>
+        
+                    <input type="url" id="productImageLink4" name="productImageLink4" placeholder="https://example.com/image.jpg" required >
+        
+                    <button type="submit">edit Product</button>
+                    <a id="cancelOfprod" href="">cancel</a>
+                </form>
     
-                <label for="productPrice">Product Price ($):</label>
-                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
-    
-                <label for="productImageLink">Product Image Link:</label>
-                <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
+            </div>
+           
 
-                <label for="productImageLink2">you must add extra img:</label>
-                <input type="url" id="productImageLink2" name="productImageLink" placeholder="https://example.com/image.jpg" required >
-    
-                <input type="url" id="productImageLink3" name="productImageLink" placeholder="https://example.com/image.jpg" required>
-    
-                <input type="url" id="productImageLink4" name="productImageLink" placeholder="https://example.com/image.jpg" required >
-    
-                <button type="submit">Add Product</button>
-                <a id="cancelOfprod" href="">cancel</a>
-            </form>
-        </div>
     
     </div>
 
@@ -92,13 +99,13 @@
                 </tr>
             </thead>
             <tbody></tbody>
-            <h3 class="addProductWrapper" >
+            <h3 class="adduserWrapper" >
                 <button class="add" id="func_show_add_user">Add User</button>
             </h3>
         </table>
 
 
-        <form id="registrationForm" action="home.html" method="post">
+        <form id="editForm" action="home.html" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter your username" >
             <div class="error" id="usernameError"></div>
@@ -115,15 +122,22 @@
             <label for="confirm-password">Confirm Password</label>
             <input type="password" id="confirm-password" placeholder="Confirm your password" >
             <div class="error" id="confirmPasswordError"></div>
+
+            <label for="role">role</label>
+            <input type="text" id="role" placeholder="role" >
+
+            <label for="banned">ban stat</label>
+            <input type="text" id="banned" placeholder="banned ?" >
     
-            <button type="submit">Register</button>
+            <button type="submit">edit</button>
 
             <a id="cancelOfuser" href="">cancel</a>
 
     
         </form>
+
+
     </div>
 
-    <script src="../java script/admin.js"></script>
 </body>
 </html>

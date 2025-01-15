@@ -1,5 +1,4 @@
 [
-
   {
     "id": 1,
     "username": "admin",
@@ -8,7 +7,6 @@
     "banned": false,
     "role": "admin"
   },
-
   {
     "id": 2,
     "username": "adidas",
@@ -17,8 +15,6 @@
     "banned": false,
     "role": "seller"
   },
-
-  
   {
     "id": 3,
     "username": "mona ali",
@@ -33,13 +29,6 @@
     "email": "wdarwesh365@gmail.com",
     "password": "node server.js",
     "banned": true
-  },
-  {
-    "id": 5,
-    "username": "basma",
-    "email": "basma@gmail.com",
-    "password": "112233445566",
-    "banned": false
   },
   {
     "id": 6,
@@ -64,13 +53,6 @@
     "banned": false
   },
   {
-    "id": 9,
-    "username": "alaa",
-    "email": "alaaa@gma.co",
-    "password": "123456789",
-    "banned": false
-  },
-  {
     "id": 10,
     "username": "hesham",
     "email": "hesham@gmail.com",
@@ -86,10 +68,11 @@
   },
   {
     "id": 12,
-    "username": "osam",
+    "username": "osama",
     "email": "osg@gmail.vno",
-    "password": "123123123",
-    "banned": false
+    "password": "10420210",
+    "role": "undefined",
+    "banned": "false"
   },
   {
     "id": 13,
@@ -100,11 +83,11 @@
   },
   {
     "id": 14,
-    "username": "oioi",
+    "username": "oi",
     "email": "Wahied.salaa7@gmail.com",
-    "password": "123123123",
-    "banned": false,
-    "role": "customer"
+    "password": "11223344",
+    "role": "customer",
+    "banned": "true"
   },
   {
     "id": 15,
@@ -127,22 +110,6 @@
     "username": "qwqwqe",
     "email": "alaaa@gma.co",
     "password": "11223311",
-    "banned": false,
-    "role": "customer"
-  },
-  {
-    "id": 18,
-    "username": "jeahan",
-    "email": "jehan@gmail.com",
-    "password": "112233112233",
-    "banned": false,
-    "role": "customer"
-  },
-  {
-    "id": 19,
-    "username": "wael",
-    "email": "Wahied.salaa7@gmail.com",
-    "password": "112233112233",
     "banned": false,
     "role": "customer"
   },
@@ -171,14 +138,6 @@
     "role": "customer"
   },
   {
-    "id": 23,
-    "username": "menna",
-    "email": "enna@gmai.com",
-    "password": "11223344",
-    "banned": false,
-    "role": "customer"
-  },
-  {
     "id": 24,
     "username": "ahmed ramadan",
     "email": "ah_rm@gmail.com",
@@ -187,50 +146,42 @@
     "role": "customer"
   },
   {
-    "id": 25,
-    "username": "asala",
-    "email": "asala@gmail.com",
-    "password": "11223311",
-    "banned": false,
-    "role": "customer"
-  },
-  {
-    "id": 26,
-    "username": "adel shakal",
-    "email": "adel@gmail.com",
-    "password": "11223344",
-    "banned": false,
-    "role": "customer"
-  },
-  {
-    "id": 27,
-    "username": "emam ashour",
-    "email": "emm@gmail.com",
-    "password": "11223344",
-    "banned": false,
-    "role": "customer"
-  },
-  {
     "id": 28,
-    "username": "iti",
+    "username": "iti zag",
     "email": "iti@gmail.com",
-    "password": "11223311",
-    "banned": false,
-    "role": "customer"
+    "password": "10103030",
+    "role": "customer",
+    "banned": "true"
   },
   {
     "id": 29,
-    "username": "mona",
-    "email": "nkk@gmail.com",
-    "password": "11223311",
+    "username": "waheed eidarous",
+    "email": "wdarwesh365@gmail.com",
+    "password": "10420210",
     "banned": false,
     "role": "customer"
   },
   {
     "id": 30,
-    "username": "azazy",
-    "email": "azazy@gmail.com",
-    "password": "010123123",
+    "username": "iti zag",
+    "email": "iti_zag@gmail.com",
+    "password": "01012310",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 32,
+    "username": "iti_python",
+    "email": "python@gmail.com",
+    "password": "010123010",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 33,
+    "username": "iti zaggggggggggg",
+    "email": "20912020100512@fci.zu.edu.eg",
+    "password": "010123010",
     "banned": false,
     "role": "customer"
   }
