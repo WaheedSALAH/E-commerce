@@ -162,6 +162,7 @@ th,td{
     color: #ddd;
 }
 .img_prod img {
+    border: solid black;
     width: 80px;
     transition: transform 0.3s ease; /* Smooth transition for scaling */
 }

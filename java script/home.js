@@ -68,6 +68,8 @@ fetch('products.json')
                 <h3>${product.product_name}</h3>
                 <h1><strong>${product.price} $</strong></h1>
                 <button>Add to Cart</button>
+                
+                <h5 id = "stock_val" >in stock ${product.stock} items !</h5>
 
                 <ul>
                 <li><h1>product details</h1></li>
@@ -92,6 +94,7 @@ fetch('products.json')
             // Add event listener for this product card
             productDiv.addEventListener('click', () => {
                 // Store the clicked product's HTML in localStorage
+                window.localStorage.setItem('product_stock', product.stock);
                 window.localStorage.setItem('product', productDiv.outerHTML);
 
                 // Redirect to the product details page

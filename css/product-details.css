@@ -1,30 +1,27 @@
 body{
     background-color: black;
 }
-.extra{
+.extra {
+    border: solid rgb(0, 0, 0);
     display: block;
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-
-
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
 }
+
 .extra:hover {
-    width: 20%; 
-    transform: scale(1.2);
-
-    /* filter: brightness(1.2);   */
+    transform: scale(1.3);  /* Slightly scale the element */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-.main-pic{
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-
+.main-pic {
+    border: solid rgb(0, 0, 0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
 }
-.main-pic:hover{
-    width: 20%; 
-    transform: scale(1.2);
-    /* filter: brightness(1.2);  */
 
+.main-pic:hover {
+    transform: scale(1.3);  /* Slightly scale the element */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
+
 #op{
     border:solid black;
 
@@ -120,4 +117,39 @@ body{
 
 .all h1{
     color: #000000;
+}
+
+#outOfstock{
+    color: rgb(255, 255, 255);
+    border: solid #c80000 ;
+    background-color: #c80000;
+    border-radius: 13px;
+    font-size:medium;
+    padding: 6px;
+    display: none;
+}
+
+#inStock{
+    font-size:medium;
+    border: solid #387d16 ;
+    background-color: #387d16;
+    border-radius: 13px;
+    font-size:medium;
+    padding: 6px;
+    display: none;
+
+
+}
+.product-card {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-card h5{
+    
+display: block;
+
 }

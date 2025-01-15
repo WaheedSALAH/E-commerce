@@ -32,4 +32,39 @@ document.addEventListener("DOMContentLoaded", function () {
     if (product) {
         details.innerHTML = product;  
     }
+    
+    let stock = localStorage.getItem("product_stock")
+
+    if(stock>0)
+    {
+        let show_instock = document.getElementById("inStock")
+        show_instock.style.display ="block";
+
+    }
+    else{
+        let show_outstock =document.getElementById("outOfstock")
+        let stock_val = document.getElementById('stock_val')
+        show_outstock.style.display ="block";
+        stock_val.style.display = "none"
+    }
+
+
 });
+
+
+// fetch('../products.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json(); // Parse JSON
+//     })
+//     .then(data => {
+//         // console.log(data); // Log data to console
+
+
+//         // Add each product to the DOM
+//         data.forEach(product => {
+//             console.log(product)
+        
+//         })})
