@@ -1,37 +1,36 @@
 // location.reload()
 //////////////////////////////////////////////////////عشااااااااااان اعرض المنتجات \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-fetch("../products.json").then((product)=>{
-    console.log(product)
-    let myData = product.json()
-    console.log(myData)
-    return myData;
-}).then((myData)=>{
-    const tableBody = document.querySelector("#products-table tbody");
-    tableBody.innerHTML = "";
-    myData.forEach(product => {
-        const row = document.createElement("tr");
-        if(product.publisher == 'admin')product.product_permition = 'by admin'
-        if(product.publisher == 'seller')product.product_permition = 'by seller'
-        row.innerHTML = `
-            <td>${product.id}</td>
-            <td>${product.product_name}</td>
-            <td>${product.price} $</td>
-            <td>${product.product_permition}</td>
+// fetch("../products.json").then((product)=>{
+//     console.log(product)
+//     let myData = product.json()
+//     console.log(myData)
+//     return myData;
+// }).then((myData)=>{
+//     const tableBody = document.querySelector("#products-table");
+//     tableBody.innerHTML = "";
+//     myData.forEach(product => {
+//         if(product.publisher == 'admin')product.publisher = 'by admin';
+//         if(product.publisher == 'seller')product.publisher = 'by seller';
+//         const row = document.createElement("tr");
+//         row.innerHTML += `
+//             <td>${product.id}</td>
+//             <td>${product.product_name}</td>
+//             <td>${product.price} $</td>
+//             <td>${product.publisher}</td>
 
-            <td>
-                <button id ='${product.id}'>Delete</button>
-                <button class ='${product.id}'>Edit</button>
-            </td>
-        `;
-        console.log(product.id)
-        let id = document.getElementById(`${product.id}`)
-        console.log(id)
-        // console.log(document.getElementById('${product.id}'))
-        tableBody.appendChild(row);
-        let rowOfstat = document.querySelector('#statOfprod')
-        rowOfstat.innerHTML =`<td>${myData.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
-    });
-})
+//             <td>
+//                 <button id ='${product.id}'>Delete</button>
+//                 <button class ='${product.id}'>Edit</button>
+//             </td>
+//         `;
+
+//         // console.log(id)
+//         // console.log(document.getElementById('${product.id}'))
+//         tableBody.appendChild(row);
+//         let rowOfstat = document.querySelector('#statOfprod')
+//         rowOfstat.innerHTML =`<td>${myData.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
+//     });
+// })
 /////////////////////////////////////////////////////////^^^^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
@@ -135,11 +134,12 @@ fetch("../products.json").then((product) => {
     myData.forEach(product => {
         const row = document.createElement("tr");
         if (product.publisher == 'admin') product.product_permition = 'by admin'
-        if (product.publisher == 'seller') product.product_permition = 'by seller'
+        if (product.publisher == 'seller') product.publisher = 'by seller'
         row.innerHTML = `
             <td>${product.id}</td>
             <td>${product.product_name}</td>
             <td>${product.price} $</td>
+            <td>${product.publisher}</td>
             <td>${product.product_permition}</td>
 
             <td>
@@ -174,6 +174,8 @@ function editProduct(id) {
                 document.getElementById("productName").value = product.product_name;
                 document.getElementById("productDescription").value = product.description;
                 document.getElementById("productPrice").value = product.price;
+                document.getElementById("Product_publisher").value = product.publisher;
+                document.getElementById("Product_confirmation").value = product.product_permition.toString(); // Convert to string for the dropdown
                 document.getElementById("productImageLink").value = product.img_url;
                 document.getElementById("productImageLink2").value = product.img_url2;
                 document.getElementById("productImageLink3").value = product.img_url3;
@@ -187,6 +189,8 @@ function editProduct(id) {
                         product_name: document.getElementById("productName").value,
                         description: document.getElementById("productDescription").value,
                         price: parseFloat(document.getElementById("productPrice").value),
+                        publisher: (document.getElementById("Product_publisher").value),
+                        product_permition: document.getElementById("Product_confirmation").value === "true", // Convert string to boolean
                         img_url: document.getElementById("productImageLink").value,
                         img_url2: document.getElementById("productImageLink2").value,
                         img_url3: document.getElementById("productImageLink3").value,
