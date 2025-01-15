@@ -49,14 +49,14 @@
     "id": 1736968146348,
     "product_name": "t shirt",
     "description": "well",
-    "price": 15,
+    "price": 12,
     "publisher": "seller",
     "product_permition": true,
     "stock": "20",
     "img_url": "../images/black t-shirt.avif",
-    "img_url2": "../images/black t-shirt.avif",
-    "img_url3": "../images/black t-shirt.avif",
-    "img_url4": "../images/black t-shirt.avif"
+    "img_url2": "../images/black t-shirt back.avif",
+    "img_url3": "../images/black t-shirt side1.avif",
+    "img_url4": "../images/black t-shirt side2.avif"
   },
   {
     "id": 1736968515983,
