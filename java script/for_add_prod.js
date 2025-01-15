@@ -40,7 +40,7 @@ document.querySelector("#addProductForm").addEventListener("submit", function (e
         .then(data => {
             if (data.success) {
                 alert("Product added successfully!");
-                location.href = "../html/admin.html"
+                location.href = "admin.html"
                 // document.getElementById("addProductForm").reset(); // Reset the form
                 // location.reload()
             } else {
