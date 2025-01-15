@@ -141,6 +141,9 @@ fetch("../products.json").then((product) => {
             <td>${product.price} $</td>
             <td>${product.publisher}</td>
             <td>${product.product_permition}</td>
+            <td>${product.stock}</td>
+            <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
+
 
             <td>
                 <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
@@ -176,6 +179,7 @@ function editProduct(id) {
                 document.getElementById("productPrice").value = product.price;
                 document.getElementById("Product_publisher").value = product.publisher;
                 document.getElementById("Product_confirmation").value = product.product_permition.toString(); // Convert to string for the dropdown
+                document.getElementById("Product_stock").value = product.stock;
                 document.getElementById("productImageLink").value = product.img_url;
                 document.getElementById("productImageLink2").value = product.img_url2;
                 document.getElementById("productImageLink3").value = product.img_url3;
@@ -191,6 +195,7 @@ function editProduct(id) {
                         price: parseFloat(document.getElementById("productPrice").value),
                         publisher: (document.getElementById("Product_publisher").value),
                         product_permition: document.getElementById("Product_confirmation").value === "true", // Convert string to boolean
+                        stock: document.getElementById("Product_stock").value,
                         img_url: document.getElementById("productImageLink").value,
                         img_url2: document.getElementById("productImageLink2").value,
                         img_url3: document.getElementById("productImageLink3").value,

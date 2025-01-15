@@ -46,6 +46,9 @@ th {
     height: 100px; /* Optional: adjust height as needed */
     margin: 0; /* Optional: remove extra spacing */
 }
+button{
+    background-color: #505050;
+}
 
 .adduserWrapper {
     display: flex;
@@ -60,7 +63,7 @@ th {
     align-self: center; /* Ensures the button aligns within the flex container */
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #007a5a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,7 +72,7 @@ th {
 }
 
 .add:hover {
-    background-color: #0056b3;
+    background-color: #000000;
 }
 
 header {
@@ -112,7 +115,7 @@ padding: 20px;
     margin: auto;
     align-self: center;
     width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 
 }
 
@@ -141,4 +144,29 @@ th,td{
 
 #editProductForm h1{
     color: #007BFF;
+}
+.hide_pub{
+    display: none;
+}
+
+.btn_del{
+    background-color: rgb(107, 11, 11);
+}
+
+#users-table thead tr th{
+    background-color: #005740;
+    color: #ddd;
+}
+#products-table thead tr th{
+    background-color: #005740;
+    color: #ddd;
+}
+.img_prod img {
+    width: 80px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.img_prod img:hover {
+    transform: scale(2.5); /* Increase the size by 1.5x on hover */
+    cursor: pointer; /* Optional: Add a pointer cursor */
 }

@@ -24,14 +24,14 @@ label {
     margin: 10px 0 5px;
 }
 
-input, textarea, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
 
+.addProductWrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Optional: adjust height as needed */
+    margin: 0; /* Optional: remove extra spacing */
+}
 .addProductWrapper {
     display: flex;
     justify-content: center; /* Centers horizontally */
@@ -43,7 +43,7 @@ input, textarea, button {
     align-self: center; /* Ensures the button aligns within the flex container */
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #007a5a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -139,4 +139,72 @@ th, td {
     background-color: #212a22; /* Header background color */
     color: white; /* Header text color */
     
+}
+td {
+    align-items: center;
+    align-content: center;
+}
+.btn_del{
+    margin: 20px;
+}
+#editProductForm{
+    display: none;
+}
+
+form {
+    font-size: larger;
+    text-decoration: solid;
+    max-width: 400px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.5); /* لون أبيض مع شفافية 50% */
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    text-align: center;
+    backdrop-filter: blur(9px); /* إضافة تأثير الضبابية للخلفية */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* حدود خفيفة */
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+#Product_confirmation{
+    display: none;
+}
+.img_prod img {
+    width: 80px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.img_prod img:hover {
+    transform: scale(2.5); /* Increase the size by 1.5x on hover */
+    cursor: pointer; /* Optional: Add a pointer cursor */
 }

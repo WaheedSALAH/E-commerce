@@ -3,13 +3,21 @@ body{
 }
 .extra{
     display: block;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+
 
 
 }
 .extra:hover {
     width: 20%; 
     transform: scale(1.2);
+
     /* filter: brightness(1.2);   */
+}
+
+.main-pic{
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+
 }
 .main-pic:hover{
     width: 20%; 
@@ -111,5 +119,5 @@ body{
 
 
 .all h1{
-    color: #ffffff;
+    color: #000000;
 }

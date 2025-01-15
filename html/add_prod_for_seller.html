@@ -6,13 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
 
-    <script defer src="../java script/for_add_prod.js"></script>
-    <style>
-        
-    </style>
+    <script defer src="../java script/for_add_prod_from_seller.js"></script>
 </head>
 <body>
-    <div>
+    <div class="form-container">
         <form id="addProductForm">
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" name="productName" required>
@@ -30,14 +27,13 @@
             <input type="text" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
     
             <label for="productImageLink2">you must add extra img:</label>
-            <input type="text" id="productImageLink2" name="productImageLink2" placeholder="https://example.com/image.jpg" >
+            <input type="text" id="productImageLink2" name="productImageLink" placeholder="https://example.com/image.jpg" required >
     
-            <input type="text" id="productImageLink3" name="productImageLink3" placeholder="https://example.com/image.jpg" >
+            <input type="text" id="productImageLink3" name="productImageLink" placeholder="https://example.com/image.jpg" required>
     
-            <input type="text" id="productImageLink4" name="productImageLink4" placeholder="https://example.com/image.jpg" >
+            <input type="text" id="productImageLink4" name="productImageLink" placeholder="https://example.com/image.jpg" required >
     
-            <button type="submit">Add Product</button>
-            <a id="cancelOfprod" href="">cancel</a>
+            <button class="add" type="submit">Add Product</button>
         </form>
     </div>
 </body>

@@ -39,6 +39,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
 
         
         else if (user.role === "seller") {
+            window.localStorage.setItem(("user_name"),user.username)
             window.localStorage.setItem(("user_role"),user.role)
             window.location.href = "seller-dashboard.html";
         }

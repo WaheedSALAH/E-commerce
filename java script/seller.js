@@ -1,10 +1,20 @@
+
+
 let show_prod = document.querySelector("#prod")
 let hidden_prod = document.querySelector("#products-section")
 
 show_prod.addEventListener('click', function () {
     hidden_prod.style.display = "block";   
+    
 });
 
+let go_to_add = document.querySelector('#func_show_add_product')
+go_to_add.addEventListener('click', function () {
+    location.href ="../html/add_prod_for_seller.html"
+
+});
+
+// location.href ="../html/add_prod_for_seller.html"
 
 let hidden_form = document.querySelector(".form-container");
 let showbtn = document.querySelector("#func_show_add_product");
@@ -44,12 +54,18 @@ fetch("../products.json").then((product)=>{
         if (product.publisher == 'seller')
         {
         count1 +=1;
-        row = document.createElement("tr");
+        const row = document.createElement("tr");
         row.innerHTML = `
             <td>${product.id}</td>
             <td>${product.product_name}</td>
             <td>${product.price} $</td>
-            <td>${product.product_permition}</td
+            <td>${product.product_permition}</td>
+            <td>${product.stock}</td>
+            <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
+            <td>
+                <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+            </td>
         `;
         tableBody.appendChild(row);
 
@@ -61,7 +77,7 @@ fetch("../products.json").then((product)=>{
 })
 
 // let statOforder = document.querySelector('#statOforder')
-// statOforder.innerHTML =`<td>${product.product_permition.length}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
+// statOforder.innerHTML =`<td>${product.product_permition.length}</td>` //<<<<<<<<<<<<<< دا اللى هحط فيه عدد المتجات المطلوبة
 
 
 let user_name = localStorage.getItem("user_name");
@@ -75,64 +91,104 @@ userNameElement.textContent = `Welcome, ${user_name}! you act as seller `;
 header.prepend(userNameElement);
 
 
-document.getElementById("addProductForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
 
-    // جمع البيانات
-    const productName = document.getElementById("productName").value.trim();
-    const productDescription = document.getElementById("productDescription").value.trim();
-    const productPrice = document.getElementById("productPrice").value.trim();
-    const productImageLink = document.getElementById("productImageLink").value.trim();
-    const productImageLink2 = document.getElementById("productImageLink2").value.trim();
-    const productImageLink3 = document.getElementById("productImageLink3").value.trim();
-    const productImageLink4 = document.getElementById("productImageLink4").value.trim();
-
-    // التحقق من صحة البيانات
-    if (!productName || !productDescription || !productPrice || !productImageLink) {
-        alert("All fields are required!");
-        return;
+document.querySelector("#products-table tbody").addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("btn_edit")) {
+        let hidden_form3 = document.querySelector('#editProductForm');
+        hidden_form3.style.display = "block";
+        hidden_form3.scrollIntoView({ behavior: "smooth" });
     }
+});
 
-    const productData = {
-        product_name: productName,
-        description: productDescription,
-        price: parseFloat(productPrice),
-        img_url: productImageLink,
-        img_url2:productImageLink2,
-        img_url3:productImageLink3,
-        img_url4:productImageLink4
-    };
+function editProduct(id) {
+    // Fetch the product by id and populate the form
+    fetch(`../products.json`)
+        .then(response => response.json())
+        .then(products => {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById("productName").value = product.product_name;
+                document.getElementById("productDescription").value = product.description;
+                document.getElementById("productPrice").value = product.price;
+                document.getElementById("Product_stock").value = product.stock;
+                document.getElementById("productImageLink").value = product.img_url;
+                document.getElementById("productImageLink2").value = product.img_url2;
+                document.getElementById("productImageLink3").value = product.img_url3;
+                document.getElementById("productImageLink4").value = product.img_url4;
 
+                // Modify form submission to handle edit
+                document.getElementById("editProductForm").onsubmit = function (e) {
+                    e.preventDefault();
+                    
+                    // Prepare the updated fields only
+                    const updatedFields = {};
+                    const newName = document.getElementById("productName").value;
+                    const newDescription = document.getElementById("productDescription").value;
+                    const newPrice = document.getElementById("productPrice").value;
+                    const newStock = document.getElementById("Product_stock").value;
+                    const newImgUrl = document.getElementById("productImageLink").value;
+                    const newImgUrl2 = document.getElementById("productImageLink2").value;
+                    const newImgUrl3 = document.getElementById("productImageLink3").value;
+                    const newImgUrl4 = document.getElementById("productImageLink4").value;
 
+                    if (newName !== product.product_name) updatedFields.product_name = newName;
+                    if (newDescription !== product.description) updatedFields.description = newDescription;
+                    if (parseFloat(newPrice) !== product.price) updatedFields.price = parseFloat(newPrice);
+                    if (newStock !== product.stock) updatedFields.stock = newStock;
+                    if (newImgUrl !== product.img_url) updatedFields.img_url = newImgUrl;
+                    if (newImgUrl2 !== product.img_url2) updatedFields.img_url2 = newImgUrl2;
+                    if (newImgUrl3 !== product.img_url3) updatedFields.img_url3 = newImgUrl3;
+                    if (newImgUrl4 !== product.img_url4) updatedFields.img_url4 = newImgUrl4;
 
+                    let confirmation = confirm("Are you sure you want to update the product?");
+                    if (!confirmation) return;
 
-
-    // إرسال البيانات للـ backend
-    fetch('/seller-dashboard', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(productData),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                    fetch(`/seller/edit-product/${id}`, {
+                        method: 'PATCH', // Use PATCH for partial updates
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updatedFields),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert("Product updated successfully!");
+                                location.reload();
+                            } else {
+                                alert(data.error || "Failed to update product.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("An error occurred while updating the product.");
+                        });
+                };
             }
-            return response.json();
         })
+        .catch(error => {
+            console.error("Error fetching products:", error);
+            alert("An error occurred while fetching the product details.");
+        });
+}
+
+function deleteProduct(id) {
+    let confirmation = confirm("are u sure")
+    if(!confirmation)return;
+    fetch(`/admin/delete-product/${id}`, {
+        method: 'DELETE',
+    })
+        .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert("Product sent successfully!  please wait for admin confirmation");
-                // document.getElementById("addProductForm").reset(); // Reset the 
-                location.reload()
+                alert("Product deleted successfully!");
+                location.reload();
             } else {
-                alert(data.error || "Failed to add product.");
+                alert(data.error || "Failed to delete product.");
             }
         })
         .catch(error => {
             console.error("Error:", error);
-            alert("An error occurred while adding the product.");
+            alert("An error occurred while deleting the product.");
         });
-    
-});
+}

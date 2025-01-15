@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Dashboard</title>
-    <link rel="stylesheet" href="../css/seller.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seller Dashboard</title>
+        
+        <link rel="stylesheet" href="../css/seller.css">
+        <script defer src="../java script/seller.js"></script>
+
+    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
 </head>
 <body>
 
@@ -35,9 +39,9 @@
             </table>
         </div>
         <div class="section" id="products-section">
-            <div id="prod">
+            <!-- <div id="prod">
                 <h2>Products</h2>
-            </div>
+            </div> -->
             <table id="products-table">
                 <thead>
                     <tr>
@@ -45,42 +49,50 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>status</th>
+                        <th>stock</th>
+                        <th>product image</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
+                
                 <h3 class="addProductWrapper" >
                     <button class="add" id="func_show_add_product">Add Product</button>
                 </h3>
             </table>
 
+            <form id="editProductForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+    
+                <label for="productDescription">Product Description:</label>
+                <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+    
+                <label for="productPrice">Product Price ($):</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
 
+
+                    <label for="Product_stock">Product stock:</label>
+                    <input type="number" id="Product_stock" name="Product_stock" required>
+                
+            
+                
+    
+                <label for="productImageLink">Product Image Link:</label>
+                <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
+
+                <label for="productImageLink2">you must add extra img:</label>
+                <input type="url" id="productImageLink2" name="productImageLink2" placeholder="https://example.com/image.jpg" >
+    
+                <input type="url" id="productImageLink3" name="productImageLink3" placeholder="https://example.com/image.jpg" >
+    
+                <input type="url" id="productImageLink4" name="productImageLink4" placeholder="https://example.com/image.jpg" >
+    
+                <button type="submit">edit Product</button>
+                <a id="cancelOfprod" href="">cancel</a>
+            </form>
     </div>
-    <div class="form-container">
-        <h1>Seller Dashboard - Add Product</h1>
-        <form id="addProductForm">
-            <label for="productName">Product Name:</label>
-            <input type="text" id="productName" name="productName" required>
+   
 
-            <label for="productDescription">Product Description:</label>
-            <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
-
-            <label for="productPrice">Product Price ($):</label>
-            <input type="number" id="productPrice" name="productPrice" step="0.01" required>
-
-            <label for="productImageLink">Product Image Link:</label>
-            <input type="url" id="productImageLink" name="productImageLink" placeholder="https://example.com/image.jpg" required>
-
-            <label for="productImageLink2">you must add extra img:</label>
-            <input type="url" id="productImageLink2" name="productImageLink" placeholder="https://example.com/image.jpg" required >
-
-            <input type="url" id="productImageLink3" name="productImageLink" placeholder="https://example.com/image.jpg" required>
-
-            <input type="url" id="productImageLink4" name="productImageLink" placeholder="https://example.com/image.jpg" required >
-
-            <button class="add" type="submit">Add Product</button>
-        </form>
-    </div>
-
-    <script src="../java script/seller.js"></script>
 </body>
 </html>

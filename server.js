@@ -146,6 +146,29 @@ app.put('/admin/edit-product/:id', (req, res) => {
     });
 });
 
+app.patch('/seller/edit-product/:id', (req, res) => {
+    const productsFilePath = path.join(__dirname, 'products.json');
+    fs.readFile(productsFilePath, 'utf-8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error reading product data.' });
+
+        let products = JSON.parse(data);
+        const productIndex = products.findIndex(p => p.id === parseInt(req.params.id));
+
+        if (productIndex !== -1) {
+            // Update only the provided fields
+            products[productIndex] = { ...products[productIndex], ...req.body };
+
+            fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+                if (err) return res.status(500).json({ error: 'Error updating product.' });
+                res.json({ success: true });
+            });
+        } else {
+            res.status(404).json({ error: 'Product not found.' });
+        }
+    });
+});
+
+
 // Admin - Delete User
 app.delete('/admin/delete-user/:id', (req, res) => {
     const usersFilePath = path.join(__dirname, 'users.json');
