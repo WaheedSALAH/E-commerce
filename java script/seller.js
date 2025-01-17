@@ -67,7 +67,7 @@ fetch("../products.json").then((product)=>{
                 <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
             </td>
         `;
-        tableBody.appendChild(row);
+        tableBody.prepend(row);
 
         let rowOfstat = document.querySelector('#statOfprod')
         rowOfstat.innerHTML =`<td>${count1}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 

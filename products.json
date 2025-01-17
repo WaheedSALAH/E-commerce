@@ -76,19 +76,34 @@
     "img_url2": "../images/black t-shirt back.avif",
     "img_url3": "../images/black t-shirt side1.avif",
     "img_url4": "../images/black t-shirt side2.avif"
-  },
+  }
+  ,
   {
-    "id": 1737074544435,
-    "product_name": "White short",
-    "description": "White short 100% cotton soooooooooo nice",
-    "price": 5,
+    "id": 1737077071457,
+    "product_name": "Second Short",
+    "description": "AL AHLY 2024 AWAY SHORTS MEN",
+    "price": 7.99,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "55",
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5e1fafd674c74d69b3f7a10b2895a064_9366/IU7908_01_laydown.jpg",
-    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9f46877d86534e029f22c8923e7f4150_9366/IU7908_02_laydown_hover.jpg",
-    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bbceaee0da564c2ab3abc44586385202_9366/IU7908_41_detail.jpg",
-    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/10205780384e43e8ae392753052964bf_9366/IU7908_42_detail.jpg"
+    "stock": "16",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/074b301636414108b73b0475b0827ff0_9366/JK2255_01_laydown.jpg",
+    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9c26af9586a24e5f92cf141a93f32a77_9366/JK2255_02_laydown_hover.jpg",
+    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bcb9fd16d3384f759ac37d3490cf1fff_9366/JK2255_41_detail.jpg",
+    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/d8778a031d6e431a80eac24e1cba8c22_9366/JK2255_42_detail.jpg"
+  }
+  ,
+  {
+    "id": 1737076193603,
+    "product_name": "TH3 SHORTS",
+    "description": "SHORTS MEN",
+    "price": 6.99,
+    "publisher": "seller",
+    "product_permition": true,
+    "stock": "23",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/607ec97241c04d289aa886d2a5928f41_9366/JK2259_01_laydown.jpg",
+    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/847577ed6f7c4770a55c2c1a2cc70c74_9366/JK2259_02_laydown_hover.jpg",
+    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/c8156c2bcf0b4a1bab4c10c72f85ed88_9366/JK2259_41_detail.jpg",
+    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/6bdc7672316d4ea38b97a2d6122364b2_9366/JK2259_42_detail.jpg"
   },
   {
     "id": 1737074934192,
@@ -102,5 +117,18 @@
     "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/c3ce0ef1bbee47e9a61afb09e70c52bf_9366/IU7906_02_laydown_hover.jpg",
     "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/fe2f2192062d4ae798f15778ef492718_9366/IU7906_41_detail.jpg",
     "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/7115abacb22e4d20ad7c89b5bb38cbb1_9366/IU7906_42_detail.jpg"
+  },
+  {
+    "id": 1737074544435,
+    "product_name": "White short",
+    "description": "White short 100% cotton soooooooooo nice",
+    "price": 5,
+    "publisher": "seller",
+    "product_permition": true,
+    "stock": "55",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5e1fafd674c74d69b3f7a10b2895a064_9366/IU7908_01_laydown.jpg",
+    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9f46877d86534e029f22c8923e7f4150_9366/IU7908_02_laydown_hover.jpg",
+    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bbceaee0da564c2ab3abc44586385202_9366/IU7908_41_detail.jpg",
+    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/10205780384e43e8ae392753052964bf_9366/IU7908_42_detail.jpg"
   }
 ]
