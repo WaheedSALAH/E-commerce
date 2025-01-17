@@ -234,6 +234,10 @@ button:hover {
 .product-card h5{
     display: none;
 }
+#product-name-filter {
+    padding: 5px;
+    width: 200px;
+  }
 
 @media (max-width: 768px) {
     header {

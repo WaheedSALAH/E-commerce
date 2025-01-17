@@ -28,6 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
 fetch('products.json')
     .then(response => {
         if (!response.ok) {
@@ -36,70 +46,93 @@ fetch('products.json')
         return response.json(); // Parse JSON
     })
     .then(data => {
-        // console.log(data); // Log data to console
-
         const productsDiv = document.getElementById('product-list');
+        const searchInput = document.getElementById("product-name-filter");
+        const search_btn = document.getElementById('apply-name-filter'); 
 
-        // Add each product to the DOM
-        data.forEach(product => {
-            // Create product container
-            const productDiv = document.createElement('div');
-            
-            productDiv.classList.add('product-card');
-            if (product.product_permition == false || product.product_permition == "waiting") 
-            {
-                console.log('not permitted')
-                return;
-            }
-            else{
+        // Function to display products
+        function displayProducts(filteredData) {
+            productsDiv.innerHTML = ''; // Clear previous products
+            filteredData.forEach(product => {
+                // Create product container
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-card');
+
+                if (product.product_permition === false || product.product_permition === "waiting") {
+                    console.log('Product not permitted');
+                    return;
+                }
 
                 productDiv.innerHTML = `
-
                 <div class="all">
-
-                <div id="images">
-
-                <img class="main-pic" src="${product.img_url}" alt="${product.product_name}">
-                <img class="extra" src="${product.img_url2}" alt="${product.product_name}">
-                <img class="extra" src="${product.img_url3}" alt="${product.product_name}">
-                <img class="extra" src="${product.img_url4}" alt="${product.product_name}">
+                    <div id="images">
+                        <img class="main-pic" src="${product.img_url}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url2}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url3}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url4}" alt="${product.product_name}">
+                    </div>
+                    <h3>${product.product_name}</h3>
+                    <h1><strong>${product.price} $</strong></h1>
+                    <button>Add to Cart</button>
+                    <h5 id="stock_val">In stock ${product.stock} items!</h5>
+                    <ul>
+                        <li><h1>Product details</h1></li>
+                        <li><p>${product.description}</p></li>
+                    </ul>
                 </div>
+                `;
 
-                <h3>${product.product_name}</h3>
-                <h1><strong>${product.price} $</strong></h1>
-                <button>Add to Cart</button>
-                
-                <h5 id = "stock_val" >in stock ${product.stock} items !</h5>
+                // Add event listener to the main image for hover effect
+                const mainPic = productDiv.querySelector('.main-pic');
+                // const extraImages = productDiv.querySelectorAll('.extra');
 
-                <ul>
-                <li><h1>product details</h1></li>
-                <li> <p>${product.description}</p> </li>
-                </ul>   
+                // Mouse enter event to change the main image source to the second image
+                mainPic.addEventListener('mouseenter', function () {
+                    mainPic.src = product.img_url2;  // Change to second image on hover
+                });
 
-                </div>
+                mainPic.addEventListener('click', function () {
+                    mainPic.src = product.img_url;  // دى من غير ما اعملها كانت الصورة بتتغير في صفحة الديتيلز عشان الماوس انتر مش زي الهوفر
+                });
 
-                    
-  
-                </div>
+                // Mouse leave event to reset back to the original image
+                mainPic.addEventListener('mouseleave', function () {
+                    mainPic.src = product.img_url;  // Reset to the original image
+                });
 
+                // Add event listener for this product card to store in localStorage and navigate
+                productDiv.addEventListener('click', () => {
+                    window.localStorage.setItem('product_stock', product.stock);
+                    window.localStorage.setItem('product', productDiv.outerHTML);
+                    window.location.href = 'html/product-details.html';
+                });
 
-            `;
-            }
-            // Add product content
-            
-
-            // Append to the main container
-            productsDiv.prepend(productDiv);
-
-            // Add event listener for this product card
-            productDiv.addEventListener('click', () => {
-                // Store the clicked product's HTML in localStorage
-                window.localStorage.setItem('product_stock', product.stock);
-                window.localStorage.setItem('product', productDiv.outerHTML);
-
-                // Redirect to the product details page
-                window.location.href = 'html/product-details.html';
+                // Append the product content to the main container
+                productsDiv.appendChild(productDiv);
             });
+        }
+
+        // Display all products initially
+        displayProducts(data);
+
+        // Search input event listener
+        search_btn.addEventListener("click", function() {
+            const searchQuery = searchInput.value.toLowerCase();
+            
+            // Filter the products based on the search query
+            const filteredProducts = data.filter(product =>
+                product.product_name.toLowerCase().includes(searchQuery)
+            );
+            
+            // Display the filtered products
+            displayProducts(filteredProducts);
+        });
+
+        // Reload page if the search input is cleared
+        searchInput.addEventListener('input', function() {
+            if (searchInput.value === "") {
+                location.reload();
+            }
         });
     })
     .catch(error => {
@@ -109,6 +142,8 @@ fetch('products.json')
 
 
 
+
+    ////////////////////////////////////////عشان لما ادوس على المنتج اخزنه ف اللوكال واروح على صفحة ديتيلز\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 let product = document.querySelectorAll(".product-card");
 

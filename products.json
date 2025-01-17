@@ -1,62 +1,55 @@
 [
   {
     "id": 1736581301148,
-    "product_name": "cold",
-    "description": "كلوت ابيض",
-    "price": 33,
+    "product_name": "last Season T-shirt",
+    "description": "this the last's season main T- Shirt it's 100 cotton",
+    "price": 9,
     "publisher": "seller",
     "product_permition": true,
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/37636f64bad04f7997beaf3a00954a48_9366/GC6372_01_laydown.jpg",
-    "img_url2": "",
-    "img_url3": "",
-    "img_url4": "",
-    "stock": 15
+    "stock": "15",
+    "img_url": "../images/old red t-shirt.avif",
+    "img_url2": "../images/old red t-shirt back.avif",
+    "img_url3": "../images/old red t-shirt side1.avif",
+    "img_url4": "../images/old red t-shirt side2.avif"
   },
   {
     "id": 1736603753931,
-    "product_name": "t-shirt-gold",
+    "product_name": "t-shirt-white",
     "description": "loooooooooooooooool",
-    "price": 66,
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/47252e6d652f4773b639af5600b5a35c_9366/GC6369_01_laydown.jpg",
-    "product_permition": false,
+    "price": 13,
     "publisher": "seller",
-    "stock": 15
+    "product_permition": true,
+    "stock": "15",
+    "img_url": "../images/old t-shirt.avif",
+    "img_url2": "../images/old t-shirt back.avif",
+    "img_url3": "../images/old t-shirt side1.avif",
+    "img_url4": "../images/old t-shirt side2.avif"
   },
   {
     "id": 1736604851905,
-    "product_name": "mshatsht",
+    "product_name": "second T-shirt",
     "description": "nice",
     "price": 11,
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/37636f64bad04f7997beaf3a00954a48_9366/GC6372_01_laydown.jpg",
+    "img_url": "../images/third t-shirt.avif",
     "product_permition": true,
     "publisher": "seller",
-    "stock": 15
-  },
-  {
-    "id": 1736607990667,
-    "product_name": "kahraba",
-    "description": "لاعيب جامد والله اشتروه وهنديكو عليه 2 هدية",
-    "price": 1,
-    "publisher": "seller",
-    "product_permition": true,
-    "img_url": "https://www.elaosboa.com/wp-content/uploads/2023/09/elaosboa28079.webp",
-    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/47252e6d652f4773b639af5600b5a35c_9366/GC6369_01_laydown.jpg",
-    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/47252e6d652f4773b639af5600b5a35c_9366/GC6369_01_laydown.jpg",
-    "img_url4": "https://assets.goal.com/images/v3/blt558757146a51c812/469942968_1134442851383315_3652286218623526001_n.jpg?auto=webp&format=pjpg&width=1200&quality=60",
-    "stock": 15
+    "stock": "15",
+    "img_url2": "../images/third t-shirt back.avif",
+    "img_url3": "../images/third t-shirt zoom2.avif",
+    "img_url4": "../images/third t-shirt zoom1.avif"
   },
   {
     "id": 1736968146348,
     "product_name": "t shirt",
-    "description": "well",
-    "price": 12,
+    "description": "well manufactured",
+    "price": 17,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "20",
-    "img_url": "../images/black t-shirt.avif",
-    "img_url2": "../images/black t-shirt back.avif",
-    "img_url3": "../images/black t-shirt side1.avif",
-    "img_url4": "../images/black t-shirt side2.avif"
+    "stock": "19",
+    "img_url": "../images/army t-shirt.avif",
+    "img_url2": "../images/army t-shirt back.avif",
+    "img_url3": "../images/army t-shirt zoom1.avif",
+    "img_url4": "../images/army t-shirt zoom2.avif"
   },
   {
     "id": 1736968515983,
@@ -67,14 +60,14 @@
     "product_permition": true,
     "stock": "20",
     "img_url": "../images/red t-shirt.avif",
-    "img_url2": "../images/red t-shirt.avif",
-    "img_url3": "../images/red t-shirt.avif",
-    "img_url4": "../images/red t-shirt.avif"
+    "img_url2": "../images/red t-shirt back.avif",
+    "img_url3": "../images/red t-shirt zoomed.avif",
+    "img_url4": "../images/red t-shirt side.avif"
   },
   {
     "id": 1736977010346,
     "product_name": "t shirt",
-    "description": "wweeeee",
+    "description": "nice 100% cotton t shirt ",
     "price": 12,
     "publisher": "seller",
     "product_permition": true,
@@ -83,5 +76,31 @@
     "img_url2": "../images/black t-shirt back.avif",
     "img_url3": "../images/black t-shirt side1.avif",
     "img_url4": "../images/black t-shirt side2.avif"
+  },
+  {
+    "id": 1737074544435,
+    "product_name": "White short",
+    "description": "White short 100% cotton soooooooooo nice",
+    "price": 5,
+    "publisher": "seller",
+    "product_permition": true,
+    "stock": "55",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5e1fafd674c74d69b3f7a10b2895a064_9366/IU7908_01_laydown.jpg",
+    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9f46877d86534e029f22c8923e7f4150_9366/IU7908_02_laydown_hover.jpg",
+    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bbceaee0da564c2ab3abc44586385202_9366/IU7908_41_detail.jpg",
+    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/10205780384e43e8ae392753052964bf_9366/IU7908_42_detail.jpg"
+  },
+  {
+    "id": 1737074934192,
+    "product_name": "red short",
+    "description": "nice red short with perfect design",
+    "price": 6,
+    "publisher": "seller",
+    "product_permition": true,
+    "stock": "60",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5e36e88f7a8d4b41b55901875984494a_9366/IU7906_01_laydown.jpg",
+    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/c3ce0ef1bbee47e9a61afb09e70c52bf_9366/IU7906_02_laydown_hover.jpg",
+    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/fe2f2192062d4ae798f15778ef492718_9366/IU7906_41_detail.jpg",
+    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/7115abacb22e4d20ad7c89b5bb38cbb1_9366/IU7906_42_detail.jpg"
   }
 ]
