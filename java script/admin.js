@@ -302,7 +302,7 @@ function editUser(id) {
                         email: document.getElementById("email").value,
                         password: document.getElementById("password").value,
                         role: document.getElementById("role").value,
-                        banned: document.getElementById("banned").value
+                        banned: document.getElementById("banned").value === 'true'
                     };
                      let confirmation = confirm("are u sure")
                     if(!confirmation)return;

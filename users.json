@@ -151,15 +151,15 @@
     "email": "iti@gmail.com",
     "password": "10103030",
     "role": "customer",
-    "banned": "true"
+    "banned": true
   },
   {
     "id": 29,
     "username": "waheed eidarous",
     "email": "wdarwesh365@gmail.com",
     "password": "10420210",
-    "banned": false,
-    "role": "customer"
+    "role": "customer",
+    "banned": true
   },
   {
     "id": 30,
