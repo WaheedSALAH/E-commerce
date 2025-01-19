@@ -115,7 +115,7 @@ padding: 20px;
     margin: auto;
     align-self: center;
     width: 50%;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); 
 
 }
 

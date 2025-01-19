@@ -76,8 +76,7 @@
     "img_url2": "../images/black t-shirt back.avif",
     "img_url3": "../images/black t-shirt side1.avif",
     "img_url4": "../images/black t-shirt side2.avif"
-  }
-  ,
+  },
   {
     "id": 1737077071457,
     "product_name": "Second Short",
@@ -90,8 +89,7 @@
     "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9c26af9586a24e5f92cf141a93f32a77_9366/JK2255_02_laydown_hover.jpg",
     "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bcb9fd16d3384f759ac37d3490cf1fff_9366/JK2255_41_detail.jpg",
     "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/d8778a031d6e431a80eac24e1cba8c22_9366/JK2255_42_detail.jpg"
-  }
-  ,
+  },
   {
     "id": 1737076193603,
     "product_name": "TH3 SHORTS",
@@ -130,5 +128,44 @@
     "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9f46877d86534e029f22c8923e7f4150_9366/IU7908_02_laydown_hover.jpg",
     "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bbceaee0da564c2ab3abc44586385202_9366/IU7908_41_detail.jpg",
     "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/10205780384e43e8ae392753052964bf_9366/IU7908_42_detail.jpg"
+  },
+  {
+    "id": 1737210700773,
+    "product_name": "black short",
+    "description": "nice black short",
+    "price": 6.9,
+    "stock": "19",
+    "img_url": "https://m.media-amazon.com/images/I/71OKCaVKGaL._AC_SX569_.jpg",
+    "img_url2": "https://m.media-amazon.com/images/I/61Zdq7GHOLL._AC_SX569_.jpg",
+    "img_url3": "https://m.media-amazon.com/images/I/714N4SRjifL._AC_SX569_.jpg",
+    "img_url4": "https://m.media-amazon.com/images/I/71RGyOuV51L._AC_SX569_.jpg",
+    "product_permition": true,
+    "publisher": "admin"
+  },
+  {
+    "id": 1737290931872,
+    "product_name": "python",
+    "description": "wee",
+    "price": 12,
+    "stock": "0",
+    "img_url": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
+    "img_url2": "",
+    "img_url3": "",
+    "img_url4": "",
+    "product_permition": true,
+    "publisher": "admin"
+  },
+  {
+    "id": 1737291135122,
+    "product_name": "python_iti",
+    "description": "wjdqjw",
+    "price": 787,
+    "publisher": "seller",
+    "product_permition": true,
+    "stock": "12",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5c6841e5b4324d78a89c454654d13fcc_9366/JK2724_03_standard.jpg",
+    "img_url2": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
+    "img_url3": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
+    "img_url4": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n"
   }
 ]

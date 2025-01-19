@@ -1,5 +1,3 @@
-
-
 let show_prod = document.querySelector("#prod")
 let hidden_prod = document.querySelector("#products-section")
 

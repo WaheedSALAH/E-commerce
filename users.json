@@ -184,5 +184,13 @@
     "password": "010123010",
     "banned": false,
     "role": "customer"
+  },
+  {
+    "id": 34,
+    "username": "iti..",
+    "email": "iti@email.com",
+    "password": "12345678",
+    "role": "customer",
+    "banned": true
   }
 ]

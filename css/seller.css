@@ -51,10 +51,6 @@ label {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
 
 .dashboard {
     max-width: 1200px;
@@ -123,6 +119,8 @@ th, td {
     text-align: center;
 }
 
+
+
 #prod{
     text-align: center;
 }
@@ -139,18 +137,54 @@ th, td {
     background-color: #212a22; /* Header background color */
     color: white; /* Header text color */
     
+    
 }
 td {
     align-items: center;
     align-content: center;
 }
+.headOFtable{
+    background-color: #007a5a;
+}
+
 .btn_del{
     margin: 20px;
 }
+
+
+.btn_del:hover{
+    cursor: pointer;
+}
+
+
+.btn_edit:hover{
+    cursor: pointer;
+}
+
 #editProductForm{
     display: none;
 }
+.btn_del{
+    background-color: rgb(107, 11, 11);
+    color: #ffffff;
+    box-shadow: #212a22;
+}
 
+.btn_edit{
+    background-color: #007BFF;
+    color: #ffffff;
+
+}
+
+.statics{
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1); 
+
+}
+
+#products-section{
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); 
+
+}
 form {
     font-size: larger;
     text-decoration: solid;
