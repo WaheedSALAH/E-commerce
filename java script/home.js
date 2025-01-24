@@ -281,7 +281,7 @@ fetch('products.json')
 
         // Search input event listener to filter products
         search_btn.addEventListener("click", function () {
-            const searchQuery = searchInput.value.toLowerCase();
+            const searchQuery = searchInput.value.trim().toLowerCase();
             const filteredProducts = data.filter(product =>
                 product.product_name.toLowerCase().includes(searchQuery)
             );
