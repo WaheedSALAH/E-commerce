@@ -7,7 +7,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "0",
-    "img_url": "../images/old red t-shirt.avif",
+    "img_url": "/images/old red t-shirt.avif",
     "img_url2": "../images/old red t-shirt back.avif",
     "img_url3": "../images/old red t-shirt side1.avif",
     "img_url4": "../images/old red t-shirt side2.avif"
