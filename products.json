@@ -7,7 +7,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "0",
-    "img_url": "./images/old red t-shirt.avif",
+    "img_url": "../images/old red t-shirt.avif",
     "img_url2": "../images/old red t-shirt back.avif",
     "img_url3": "../images/old red t-shirt side1.avif",
     "img_url4": "../images/old red t-shirt side2.avif"
@@ -20,7 +20,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "15",
-    "img_url": "./images/old t-shirt.avif",
+    "img_url": "../images/old t-shirt.avif",
     "img_url2": "../images/old t-shirt back.avif",
     "img_url3": "../images/old t-shirt side1.avif",
     "img_url4": "../images/old t-shirt side2.avif"
@@ -33,7 +33,7 @@
     "product_permition": true,
     "publisher": "seller",
     "stock": "15",
-    "img_url": "./images/third t-shirt.avif",
+    "img_url": "../images/third t-shirt.avif",
     "img_url2": "../images/third t-shirt back.avif",
     "img_url3": "../images/third t-shirt zoom2.avif",
     "img_url4": "../images/third t-shirt zoom1.avif"
@@ -46,7 +46,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "19",
-    "img_url": "./images/army t-shirt.avif",
+    "img_url": "../images/army t-shirt.avif",
     "img_url2": "../images/army t-shirt back.avif",
     "img_url3": "../images/army t-shirt zoom1.avif",
     "img_url4": "../images/army t-shirt zoom2.avif"
@@ -59,7 +59,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "20",
-    "img_url": "./images/red t-shirt.avif",
+    "img_url": "../images/red t-shirt.avif",
     "img_url2": "../images/red t-shirt back.avif",
     "img_url3": "../images/red t-shirt zoomed.avif",
     "img_url4": "../images/red t-shirt side.avif"
@@ -72,7 +72,7 @@
     "publisher": "seller",
     "product_permition": true,
     "stock": "99",
-    "img_url": "./images/black t-shirt.avif",
+    "img_url": "../images/black t-shirt.avif",
     "img_url2": "../images/black t-shirt back.avif",
     "img_url3": "../images/black t-shirt side1.avif",
     "img_url4": "../images/black t-shirt side2.avif"
