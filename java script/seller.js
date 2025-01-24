@@ -88,6 +88,12 @@ userNameElement.textContent = `Welcome, ${user_name}! you act as seller `;
 
 header.prepend(userNameElement);
 
+let logout = document.getElementById('logoutFROMseller');
+logout.addEventListener('click',function(){
+    localStorage.clear();
+})
+
+
 
 
 document.querySelector("#products-table tbody").addEventListener("click", function (e) {

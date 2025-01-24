@@ -6,7 +6,7 @@
     "price": 9,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "15",
+    "stock": "0",
     "img_url": "../images/old red t-shirt.avif",
     "img_url2": "../images/old red t-shirt back.avif",
     "img_url3": "../images/old red t-shirt side1.avif",
@@ -71,7 +71,7 @@
     "price": 12,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "0",
+    "stock": "99",
     "img_url": "../images/black t-shirt.avif",
     "img_url2": "../images/black t-shirt back.avif",
     "img_url3": "../images/black t-shirt side1.avif",
@@ -143,29 +143,16 @@
     "publisher": "admin"
   },
   {
-    "id": 1737290931872,
-    "product_name": "python",
-    "description": "wee",
+    "id": 1737700979471,
+    "product_name": "t shirt",
+    "description": "fans t shirt",
     "price": 12,
-    "stock": "0",
-    "img_url": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
-    "img_url2": "",
-    "img_url3": "",
-    "img_url4": "",
-    "product_permition": true,
-    "publisher": "admin"
-  },
-  {
-    "id": 1737291135122,
-    "product_name": "python_iti",
-    "description": "wjdqjw",
-    "price": 787,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "12",
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/5c6841e5b4324d78a89c454654d13fcc_9366/JK2724_03_standard.jpg",
-    "img_url2": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
-    "img_url3": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n",
-    "img_url4": "https://imgs.search.brave.com/RvV6pWmkd53MeWsg2t5eYQXHh4cpMeyVs_U1LQCNiA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9vd2Nk/bi5uZXQvaW1nLzY1/ODQzNDg4ODMzZDEu/cG5n"
+    "stock": "2",
+    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/b8ba36b6d901490e8802af3a00ec4242_9366/GC6381_01_laydown.jpg",
+    "img_url2": "https://m.media-amazon.com/images/I/61U4lnqRpXL._AC_SX679_.jpg",
+    "img_url3": "https://m.media-amazon.com/images/I/61U4lnqRpXL._AC_SX679_.jpg",
+    "img_url4": "https://m.media-amazon.com/images/I/61U4lnqRpXL._AC_SX679_.jpg"
   }
 ]

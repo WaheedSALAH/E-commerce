@@ -159,7 +159,7 @@
     "email": "wdarwesh365@gmail.com",
     "password": "10420210",
     "role": "customer",
-    "banned": true
+    "banned": false
   },
   {
     "id": 30,
@@ -179,18 +179,18 @@
   },
   {
     "id": 33,
-    "username": "iti zaggggggggggg",
-    "email": "20912020100512@fci.zu.edu.eg",
-    "password": "010123010",
+    "username": "ItI",
+    "email": "ITI@GMAILL.com",
+    "password": "112233445566",
     "banned": false,
     "role": "customer"
   },
   {
     "id": 34,
-    "username": "iti..",
-    "email": "iti@email.com",
-    "password": "12345678",
-    "role": "customer",
-    "banned": true
+    "username": "waheed",
+    "email": "wsas@gmail.com",
+    "password": "112233445566",
+    "banned": false,
+    "role": "customer"
   }
 ]
