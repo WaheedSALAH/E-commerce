@@ -37,6 +37,24 @@
 
 
 ////////////////////////////////////////////////////////زراير الظهور والاخفاء والانتقال\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+document.addEventListener("DOMContentLoaded", function () {
+    let user_role = localStorage.getItem("user_role");
+
+    if (!user_name || user_role !== "admin") {
+        window.location.href = "login.html"; 
+    } 
+    // else {
+    //     console.log("Admin user is logged in: " + user_name);
+    // }
+});
+
+
+
+
+
+
+
 let show_prod = document.querySelector("#prod")
 let hidden_prod = document.querySelector("#products-section")
 
