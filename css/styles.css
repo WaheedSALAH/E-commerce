@@ -269,7 +269,9 @@ h3 {
 
 @media (max-width: 768px) {
     header {
+        display: flex;
         text-align: center;
+        flex-direction: column;
     }
 
     #featured-products, #product-list {
