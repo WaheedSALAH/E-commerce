@@ -51,21 +51,42 @@ fetch("../products.json").then((product)=>{
 
         if (product.publisher == 'seller')
         {
-        count1 +=1;
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${product.id}</td>
-            <td>${product.product_name}</td>
-            <td>${product.price} $</td>
-            <td>${product.product_permition}</td>
-            <td>${product.stock}</td>
-            <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
-            <td>
-                <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
-                <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
-            </td>
-        `;
-        tableBody.prepend(row);
+            if (product.img_url.startsWith("images/")) {
+
+                count1 +=1;
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${product.id}</td>
+                    <td>${product.product_name}</td>
+                    <td>${product.price} $</td>
+                    <td>${product.product_permition}</td>
+                    <td>${product.stock}</td>
+                    <td class = "img_prod"><img src="../${product.img_url}" alt=""></td>
+                    <td>
+                        <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                        <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+                    </td>
+                `;
+                tableBody.prepend(row);
+            }
+            else{
+                count1 +=1;
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${product.id}</td>
+                    <td>${product.product_name}</td>
+                    <td>${product.price} $</td>
+                    <td>${product.product_permition}</td>
+                    <td>${product.stock}</td>
+                    <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
+                    <td>
+                        <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                        <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+                    </td>
+                `;
+                tableBody.prepend(row);
+            }
+
 
         let rowOfstat = document.querySelector('#statOfprod')
         rowOfstat.innerHTML =`<td>${count1}</td>` //<<<<<<<<<<<<<< دا اللى بحط فيه عدد المتجات 
