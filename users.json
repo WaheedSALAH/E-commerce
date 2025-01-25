@@ -176,21 +176,5 @@
     "password": "010123010",
     "banned": false,
     "role": "customer"
-  },
-  {
-    "id": 33,
-    "username": "ItI",
-    "email": "ITI@GMAILL.com",
-    "password": "112233445566",
-    "banned": false,
-    "role": "customer"
-  },
-  {
-    "id": 34,
-    "username": "waheed",
-    "email": "wsas@gmail.com",
-    "password": "112233445566",
-    "banned": false,
-    "role": "customer"
   }
 ]

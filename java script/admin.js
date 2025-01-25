@@ -135,22 +135,44 @@ fetch("../products.json").then((product) => {
         const row = document.createElement("tr");
         if (product.publisher == 'admin') product.product_permition = 'by admin'
         if (product.publisher == 'seller') product.publisher = 'by seller'
-        row.innerHTML = `
-            <td>${product.id}</td>
-            <td>${product.product_name}</td>
-            <td>${product.price} $</td>
-            <td>${product.publisher}</td>
-            <td>${product.product_permition}</td>
-            <td>${product.stock}</td>
-            <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
+        if (product.img_url.startsWith("images/")) {
 
+            row.innerHTML = `
+                <td>${product.id}</td>
+                <td>${product.product_name}</td>
+                <td>${product.price} $</td>
+                <td>${product.publisher}</td>
+                <td>${product.product_permition}</td>
+                <td>${product.stock}</td>
+                <td class = "img_prod"><img src="../${product.img_url}" alt=""></td>
+    
+    
+                <td>
+                    <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                    <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+                </td>
+            `;
+            tableBody.prepend(row);
+        }
+        else{
+            row.innerHTML = `
+                <td>${product.id}</td>
+                <td>${product.product_name}</td>
+                <td>${product.price} $</td>
+                <td>${product.publisher}</td>
+                <td>${product.product_permition}</td>
+                <td>${product.stock}</td>
+                <td class = "img_prod"><img src="${product.img_url}" alt=""></td>
+    
+    
+                <td>
+                    <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
+                    <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
+                </td>
+            `;
+            tableBody.prepend(row);
+        }
 
-            <td>
-                <button class="btn_del" onclick="deleteProduct(${product.id})">Delete</button>
-                <button class="btn_edit" onclick="editProduct(${product.id})">Edit</button>
-            </td>
-        `;
-        tableBody.prepend(row);
     });
 
     let rowOfstat = document.querySelector('#statOfprod');
