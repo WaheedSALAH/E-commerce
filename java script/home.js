@@ -259,7 +259,7 @@ fetch('products.json')
                 // Add event listener to navigate to product details on product card click
                 productDiv.addEventListener('click', function () {
                     window.localStorage.setItem('product_stock', product.stock);
-                    window.localStorage.setItem('product', productDiv.outerHTML);
+                    localStorage.setItem('product', JSON.stringify(product)); // Store product data instead of HTML
                     window.location.href = 'html/product-details.html';
                 });
 

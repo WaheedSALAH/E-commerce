@@ -25,30 +25,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    let product = localStorage.getItem("product");
-
-    let details = document.querySelector("#op");
-
-    if (product) {
-        details.innerHTML = product;  
-    }
+    // Retrieve and parse the product data from localStorage
+    let productJSON = localStorage.getItem("product");
     
-    let stock = localStorage.getItem("product_stock")
+    // Check if product data exists in localStorage
+    if (productJSON) {
+        let product = JSON.parse(productJSON); // Parse the JSON string into an object
 
-    if(stock>0)
-    {
-        let show_instock = document.getElementById("inStock")
-        show_instock.style.display ="block";
+        // Get the container to display the product details
+        let details = document.querySelector("#op");
 
+        if (details) {
+            // Dynamically create the HTML content based on the product data
+            if (product.img_url.startsWith("images/")) {
+
+                
+                details.innerHTML = `
+                    <div class="product-card">
+                    <div class="all">
+                    <div id="images">
+                            <img class="main-pic" src="../${product.img_url}" alt="${product.product_name}">
+                            <img class="extra" src="../${product.img_url2}" alt="${product.product_name}">
+                            <img class="extra" src="../${product.img_url3}" alt="${product.product_name}">
+                            <img class="extra" src="../${product.img_url4}" alt="${product.product_name}">
+                        </div>
+                        <h3>${product.product_name}</h3>
+                        <h1><strong>$${product.price}</strong></h1>
+                        <i class="fas fa-shopping-bag addbag"></i>
+                        <h5 id="stock_val">Stock: ${product.stock} items</h5>
+                        <ul>
+                            <li><h1>Product details</h1></li>
+                            <li><p>${product.description}</p></li>
+                        </ul>
+                    </div>
+                    </div>
+                `;
+            }
+            else{
+                details.innerHTML = `
+                <div class="product-card">
+                <div class="all">
+                <div id="images">
+                        <img class="main-pic" src="${product.img_url}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url2}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url3}" alt="${product.product_name}">
+                        <img class="extra" src="${product.img_url4}" alt="${product.product_name}">
+                    </div>
+                    <h3>${product.product_name}</h3>
+                    <h1><strong>$${product.price}</strong></h1>
+                    <i class="fas fa-shopping-bag addbag"></i>
+                    <h5 id="stock_val">Stock: ${product.stock} items</h5>
+                    <ul>
+                        <li><h1>Product details</h1></li>
+                        <li><p>${product.description}</p></li>
+                    </ul>
+                </div>
+                </div>
+            `;
+            }
+
+        } else {
+            console.error("The #op container is not found in the HTML.");
+        }
+
+        // Handle stock visibility
+        let stock = parseInt(product.stock);
+        if(stock>0)
+            {
+                let show_instock = document.getElementById("inStock")
+                show_instock.style.display ="block";
+        
+            }
+            else{
+                let show_outstock =document.getElementById("outOfstock")
+                let stock_val = document.getElementById('stock_val')
+                show_outstock.style.display ="block";
+                stock_val.style.display = "none"
+            }
+    } else {
+        console.error("No product data found in localStorage.");
     }
-    else{
-        let show_outstock =document.getElementById("outOfstock")
-        let stock_val = document.getElementById('stock_val')
-        show_outstock.style.display ="block";
-        stock_val.style.display = "none"
-    }
-
-
 });
 
 
