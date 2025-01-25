@@ -41,7 +41,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let user_role = localStorage.getItem("user_role");
 
-    if (!user_name || user_role !== "admin") {
+    if (user_role !== "admin") {
         window.location.href = "login.html"; 
     } 
     // else {
