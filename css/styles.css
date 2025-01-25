@@ -273,6 +273,12 @@ h3 {
         text-align: center;
         flex-direction: column;
     }
+    nav {
+        order: -1; 
+        justify-content: center;
+        width: 100%;
+    }
+
 
     #featured-products, #product-list {
         flex-direction: column;
