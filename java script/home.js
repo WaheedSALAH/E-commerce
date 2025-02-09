@@ -286,11 +286,24 @@ fetch('products.json')
                 product.product_name.toLowerCase().includes(searchQuery)
             );
             displayProducts(filteredProducts);
+            let ifpro = document.getElementById('PROsfound')
+            let ifnopro = document.getElementById('noPROfound')
+            if(filteredProducts < 1)
+            {
+                ifpro.style.display = 'none';
+                ifnopro.style.display = 'block';
+                
+            }
+
         });
 
         // Reset products if the search input is cleared
         searchInput.addEventListener('input', function () {
+            let ifpro = document.getElementById('PROsfound')
+            let ifnopro = document.getElementById('noPROfound')
             if (searchInput.value === "") {
+                ifpro.style.display = 'block';
+                ifnopro.style.display = 'none';
                 displayProducts(data); // Reload all products when input is cleared
             }
         });

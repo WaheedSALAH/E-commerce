@@ -261,10 +261,16 @@ h3 {
     padding: 18px;
     font-size: 30px;
     cursor: pointer;
-    /* background-color: #000000; */
 }
 .addbag:hover{
     color: white;
+}
+
+#noPROfound{
+    display: none;
+}
+#PROsfound{
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -272,7 +278,7 @@ h3 {
         display: flex;
         text-align: center;
         flex-direction: column;
-    }
+    } 
     nav {
         order: -1; 
         justify-content: center;

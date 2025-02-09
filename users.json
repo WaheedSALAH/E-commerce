@@ -176,5 +176,13 @@
     "password": "010123010",
     "banned": false,
     "role": "customer"
+  },
+  {
+    "id": 33,
+    "username": "osman",
+    "email": "hendy@gmail.com",
+    "password": "11223366",
+    "banned": false,
+    "role": "customer"
   }
 ]
