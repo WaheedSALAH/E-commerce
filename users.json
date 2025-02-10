@@ -184,5 +184,13 @@
     "password": "11223366",
     "banned": false,
     "role": "customer"
+  },
+  {
+    "id": 34,
+    "username": "ben_qalby",
+    "email": "wdarwesh365@gmail.com",
+    "password": "11223300",
+    "banned": false,
+    "role": "customer"
   }
 ]

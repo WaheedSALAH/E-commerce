@@ -121,6 +121,7 @@ form.addEventListener('submit', async function (event) {
                 alert('User registered successfully!');
                 form.reset();
                 location.reload()
+                location.href = '../html/login.html'
 
             } else {
                 alert('Failed to register user.');

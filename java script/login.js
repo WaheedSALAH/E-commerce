@@ -23,7 +23,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
         // Redirect
         if (user.role === "admin") {
             window.localStorage.setItem(("user_role"),user.role)
-            window.location.href = "admin.html";
+            window.location.href = "../html/admin.html";
             
         }
         else if(user.banned === true){
