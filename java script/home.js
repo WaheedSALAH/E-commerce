@@ -174,28 +174,27 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Get user_name and role from localStorage
     let user_name = localStorage.getItem("user_name");
     let role = localStorage.getItem("user_role");
     console.log(user_name);
 
-    // Get the parent element containing the login/register links
     let userField = document.querySelector(".log_reg");
     let removedItem = document.querySelector(".mybeRemoved");
     let logout = document.querySelector(".logout");
 
-    // If user_name exists and role is "customer", display user info and show logout
     if (user_name && role === "customer") {
         let userNameElement = document.createElement("div");
         userNameElement.textContent = `Welcome, ${user_name}!`;
         userNameElement.classList.add("user-welcome");
         logout.style.display = "block";
 
-        // Replace the login/register links with the new user name element
         if (removedItem) {
             userField.replaceChild(userNameElement, removedItem);
         }
     }
+
+    // ✅ تحديث عداد السلة عند تحميل الصفحة
+    updateCartCount();
 });
 
 fetch('products.json')
@@ -203,16 +202,15 @@ fetch('products.json')
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // Parse JSON
+        return response.json();
     })
     .then(data => {
         const productsDiv = document.getElementById('product-list');
         const searchInput = document.getElementById("product-name-filter");
         const search_btn = document.getElementById('apply-name-filter');
 
-        // Function to display products
         function displayProducts(filteredData) {
-            productsDiv.innerHTML = ''; // Clear previous products
+            productsDiv.innerHTML = '';
             filteredData.forEach(product => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('product-card');
@@ -232,7 +230,7 @@ fetch('products.json')
                     </div>
                     <h3>${product.product_name}</h3>
                     <h1><strong>$${product.price}</strong></h1>
-                    <i class="fas fa-shopping-bag addbag"></i>
+                    <i class="fas fa-shopping-bag addbag" data-id="${product.id}"></i>
                     <h5 id="stock_val">In stock ${product.stock} items!</h5>
                     <ul>
                         <li><h1>Product details</h1></li>
@@ -241,73 +239,142 @@ fetch('products.json')
                 </div>
                 `;
 
-                // Handle image hover behavior
                 const mainPic = productDiv.querySelector('.main-pic');
-                
                 mainPic.addEventListener('mouseenter', function () {
                     mainPic.src = product.img_url2;
                 });
-                
+
                 mainPic.addEventListener('click', function () {
-                    mainPic.src = product.img_url;  // دى من غير ما اعملها كانت الصورة بتتغير في صفحة الديتيلز عشان الماوس انتر مش زي الهوفر
+                    mainPic.src = product.img_url;
                 });
 
                 mainPic.addEventListener('mouseleave', function () {
                     mainPic.src = product.img_url;
                 });
 
-                // Add event listener to navigate to product details on product card click
-                productDiv.addEventListener('click', function () {
-                    window.localStorage.setItem('product_stock', product.stock);
-                    localStorage.setItem('product', JSON.stringify(product)); // Store product data instead of HTML
-                    window.location.href = 'html/product-details.html';
+                productDiv.addEventListener('click', function (event) {
+                    if (!event.target.classList.contains('addbag')) {
+                        localStorage.setItem('product_stock', product.stock);
+                        localStorage.setItem('product', JSON.stringify(product));
+                        window.location.href = 'html/product-details.html';
+                    }
                 });
 
-                // Add event listener for the shopping bag icon (Add to Bag functionality)
+                // ✅ إضافة المنتج إلى السلة عند الضغط على زر الشنطة
                 const addbag = productDiv.querySelector('.addbag');
                 addbag.addEventListener('click', function (e) {
-                    e.stopPropagation()
-                    // window.location.href = 'html/login.html'
-
+                    e.stopPropagation(); // منع الانتقال لصفحة التفاصيل
+                    addToCart(product);
                 });
 
-                // Append the product content to the main container
                 productsDiv.appendChild(productDiv);
             });
         }
 
-        // Display all products initially
         displayProducts(data);
 
-        // Search input event listener to filter products
         search_btn.addEventListener("click", function () {
             const searchQuery = searchInput.value.trim().toLowerCase();
             const filteredProducts = data.filter(product =>
                 product.product_name.toLowerCase().includes(searchQuery)
             );
             displayProducts(filteredProducts);
-            let ifpro = document.getElementById('PROsfound')
-            let ifnopro = document.getElementById('noPROfound')
-            if(filteredProducts < 1)
-            {
+
+            let ifpro = document.getElementById('PROsfound');
+            let ifnopro = document.getElementById('noPROfound');
+            if (filteredProducts.length < 1) {
                 ifpro.style.display = 'none';
                 ifnopro.style.display = 'block';
-                
             }
-
         });
 
-        // Reset products if the search input is cleared
         searchInput.addEventListener('input', function () {
-            let ifpro = document.getElementById('PROsfound')
-            let ifnopro = document.getElementById('noPROfound')
+            let ifpro = document.getElementById('PROsfound');
+            let ifnopro = document.getElementById('noPROfound');
             if (searchInput.value === "") {
                 ifpro.style.display = 'block';
                 ifnopro.style.display = 'none';
-                displayProducts(data); // Reload all products when input is cleared
+                displayProducts(data);
             }
         });
     })
     .catch(error => {
         console.error('Error fetching or processing JSON:', error);
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let user_name = localStorage.getItem("user_name");
+    
+        if (!user_name) {
+            let cartIcon = document.querySelector(".cart-icon"); // تحديد عنصر السلة
+    
+            if (cartIcon) cartIcon.style.display = "none"; // إخفاء السلة إذا لم يكن هناك مستخدم
+        } else {
+            updateCartCount(); // تحديث العداد عند تسجيل الدخول
+        }
+    });
+    
+    /**
+     * ✅ تحديث عداد السلة
+     */
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+        document.getElementById("cart-count").textContent = totalCount;
+    }
+    
+    
+
+/**
+ * ✅ دالة لإضافة المنتج إلى السلة وتحديث العداد
+ */
+function addToCart(product) {
+    let user_name = localStorage.getItem("user_name");
+
+    if (!user_name) {
+        alert("Please Login First");
+        window.location.href = "../html/login.html"; // 🔄 إعادة التوجيه لصفحة تسجيل الدخول
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ✅ تحقق مما إذا كان المنتج موجودًا مسبقًا في السلة
+    let existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1; // زيادة الكمية إذا كان المنتج مضاف مسبقًا
+    } else {
+        product.quantity = 1; // تعيين الكمية لأول مرة
+        cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // ✅ تحديث عداد السلة في الأيقونة والصفحة
+    updateCartIconCount();
+    updateCartPageCount();
+}
+
+/**
+ * ✅ تحديث أيقونة السلة في الصفحة الرئيسية بعدد المنتجات الفريدة فقط.
+ */
+function updateCartIconCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let uniqueItemsCount = cart.length; // 📌 عدد المنتجات الفريدة فقط
+    document.getElementById("cart-count").textContent = uniqueItemsCount;
+}
+
+/**
+ * ✅ تحديث عداد المنتجات في صفحة السلة بناءً على العدد الفعلي للمنتجات.
+ */
+function updateCartPageCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // 📌 العدد الإجمالي لكل الوحدات
+    document.getElementById("total-cart-items").textContent = totalItems; // تأكد من أن لديك عنصر يحمل هذا الـ ID
+}
+
+// ✅ استدعاء تحديث الأيقونة عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", function () {
+    updateCartIconCount();
+});
