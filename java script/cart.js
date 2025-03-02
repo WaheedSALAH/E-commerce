@@ -58,13 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".decrease-btn").forEach(button => {
             button.addEventListener("click", function () {
                 let index = this.getAttribute("data-index");
+
+                // ✅ 🔥 منع تقليل الكمية تحت 1
                 if (cart[index].quantity > 1) {
                     cart[index].quantity -= 1;
                     updateCart();
-                } else {
-                    cart.splice(index, 1); // حذف المنتج إذا وصل العدد لـ 0
                 }
-                updateCart();
             });
         });
     }
