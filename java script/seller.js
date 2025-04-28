@@ -120,10 +120,10 @@ userNameElement.textContent = `Welcome, ${user_name}! you act as seller `;
 
 header.prepend(userNameElement);
 
-let logout = document.getElementById('logoutFROMseller');
-logout.addEventListener('click',function(){
-    localStorage.clear();
-})
+// let logout = document.getElementById('logoutFROMseller');
+// logout.addEventListener('click',function(){
+//     localStorage.clear();
+// })
 
 
 

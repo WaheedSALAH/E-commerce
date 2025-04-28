@@ -23,6 +23,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
         // Redirect
         if (user.role === "admin") {
             window.localStorage.setItem(("user_role"),user.role)
+            window.localStorage.setItem(("user_name"),user.username)
             window.location.href = "../html/admin.html";
             
         }

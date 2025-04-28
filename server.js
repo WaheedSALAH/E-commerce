@@ -23,23 +23,28 @@ app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'html', 'admin
 app.post('/register', (req, res) => {
     const usersFilePath = path.join(__dirname, 'users.json');
 
-    // Read the existing users from the file
     fs.readFile(usersFilePath, 'utf-8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Error reading users data.' });
 
         let users = [];
         if (data) {
             try {
-                users = JSON.parse(data); // Parse the JSON data
+                users = JSON.parse(data);
             } catch (parseErr) {
                 return res.status(500).json({ error: 'Error parsing users data.' });
             }
         }
 
-        // Set the new user's ID
+        // ✅ Check if email already exists
+        const existingUser = users.find(user => user.email === req.body.email);
+        if (existingUser) {
+            return res.status(400).json({ error: 'Email already registered. Please use another email.' });
+        }
+
+        // Generate new user ID
         const lastUserId = users.length > 0 ? users[users.length - 1].id : 0;
         const newUserId = lastUserId + 1;
-        
+
         // Create the new user object
         const userData = { id: newUserId, ...req.body };
 

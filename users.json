@@ -178,19 +178,67 @@
     "role": "customer"
   },
   {
-    "id": 33,
-    "username": "osman",
-    "email": "hendy@gmail.com",
-    "password": "11223366",
-    "banned": false,
-    "role": "customer"
-  },
-  {
     "id": 34,
     "username": "ben_qalby",
     "email": "wdarwesh365@gmail.com",
     "password": "11223300",
     "banned": false,
     "role": "customer"
+  },
+  {
+    "id": 35,
+    "username": "waheed eidarous",
+    "email": "wdarwesh365@gmail.com",
+    "password": "123456123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 36,
+    "username": "waheed eidarous",
+    "email": "wdarwesh365@gmail.com",
+    "password": "123456123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 37,
+    "username": "waheed eidarous",
+    "email": "wdarwesh365@gmail.com",
+    "password": "123456123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 38,
+    "username": "waheed",
+    "email": "wahied.salaa7@gmail.com",
+    "password": "123456123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 39,
+    "username": "waheed",
+    "email": "wahied.salah@gmail.com",
+    "password": "123456123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 40,
+    "username": "waheed",
+    "email": "wahied@gmail.com",
+    "password": "123123123",
+    "banned": false,
+    "role": "customer"
+  },
+  {
+    "id": 41,
+    "username": "waheed",
+    "email": "git@gmail.com",
+    "password": "123456456",
+    "role": "customer",
+    "banned": true
   }
 ]

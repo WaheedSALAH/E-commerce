@@ -6,7 +6,7 @@
     "price": 9.99,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "15",
+    "stock": "0",
     "img_url": "images/old red t-shirt.avif",
     "img_url2": "images/old red t-shirt back.avif",
     "img_url3": "images/old red t-shirt side1.avif",
@@ -71,7 +71,7 @@
     "price": 12,
     "publisher": "seller",
     "product_permition": true,
-    "stock": "0",
+    "stock": "15",
     "img_url": "images/black t-shirt.avif",
     "img_url2": "images/black t-shirt back.avif",
     "img_url3": "images/black t-shirt side1.avif",
@@ -89,19 +89,6 @@
     "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/9c26af9586a24e5f92cf141a93f32a77_9366/JK2255_02_laydown_hover.jpg",
     "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/bcb9fd16d3384f759ac37d3490cf1fff_9366/JK2255_41_detail.jpg",
     "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/d8778a031d6e431a80eac24e1cba8c22_9366/JK2255_42_detail.jpg"
-  },
-  {
-    "id": 1737076193603,
-    "product_name": "TH3 SHORTS",
-    "description": "SHORTS MEN",
-    "price": 6.99,
-    "publisher": "seller",
-    "product_permition": true,
-    "stock": "23",
-    "img_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/607ec97241c04d289aa886d2a5928f41_9366/JK2259_01_laydown.jpg",
-    "img_url2": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/847577ed6f7c4770a55c2c1a2cc70c74_9366/JK2259_02_laydown_hover.jpg",
-    "img_url3": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/c8156c2bcf0b4a1bab4c10c72f85ed88_9366/JK2259_41_detail.jpg",
-    "img_url4": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/6bdc7672316d4ea38b97a2d6122364b2_9366/JK2259_42_detail.jpg"
   },
   {
     "id": 1737074934192,
@@ -139,6 +126,19 @@
     "img_url2": "https://m.media-amazon.com/images/I/61Zdq7GHOLL._AC_SX569_.jpg",
     "img_url3": "https://m.media-amazon.com/images/I/714N4SRjifL._AC_SX569_.jpg",
     "img_url4": "https://m.media-amazon.com/images/I/71RGyOuV51L._AC_SX569_.jpg",
+    "product_permition": true,
+    "publisher": "admin"
+  },
+  {
+    "id": 1740949847953,
+    "product_name": "cup",
+    "description": "nice cup",
+    "price": 16,
+    "stock": "55",
+    "img_url": "https://m.media-amazon.com/images/I/51+FMPw33qL._AC_SX679_.jpg",
+    "img_url2": "https://m.media-amazon.com/images/I/31g3UrFmuUL._AC_.jpg",
+    "img_url3": "https://m.media-amazon.com/images/I/319d2IcSKsL._AC_.jpg",
+    "img_url4": "https://m.media-amazon.com/images/I/31KYvTJxmIL._AC_.jpg",
     "product_permition": true,
     "publisher": "admin"
   }

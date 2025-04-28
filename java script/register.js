@@ -90,41 +90,42 @@ confirmPassword.addEventListener('blur', validateConfirmPassword);
 // Validate the form on submit
 // Submit event for form
 form.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent form submission to handle validation
+    event.preventDefault(); // Prevent default form submission
 
     const isUsernameValid = validateUsername();
     const isEmailValid = validateEmail();
     const isPasswordValid = validatePassword();
     const isConfirmPasswordValid = validateConfirmPassword();
 
-    // If all validations pass, submit the form
     if (isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
         const userData = {
-        
             username: username.value,
             email: email.value,
-            password: password.value, // In production, never send plain text passwords
-            banned : false,
-            role : "customer"
+            password: password.value,
+            banned: false,
+            role: "customer"
         };
 
         try {
-            const response = await fetch('/register', { // Send to backend's /register route
+            const response = await fetch('/register', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userData),
             });
 
-            if (response.ok) {
-                alert('User registered successfully!');
-                form.reset();
-                location.reload()
-                location.href = '../html/login.html'
+            const result = await response.json();
 
+            if (response.ok) {
+                alert(result.message);
+                form.reset();
+                location.href = '../html/login.html';
             } else {
-                alert('Failed to register user.');
+                if (result.error === 'Email already registered. Please use another email.') {
+                    emailError.textContent = result.error;
+                    email.style.border = "solid red";
+                } else {
+                    alert(result.error);
+                }
             }
         } catch (error) {
             console.error('Error:', error);

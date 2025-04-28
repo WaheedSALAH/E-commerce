@@ -182,14 +182,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let removedItem = document.querySelector(".mybeRemoved");
     let logout = document.querySelector(".logout");
 
-    if (user_name && role === "customer") {
+    if (user_name) {
         let userNameElement = document.createElement("div");
         userNameElement.textContent = `Welcome, ${user_name}!`;
         userNameElement.classList.add("user-welcome");
-        logout.style.display = "block";
 
-        if (removedItem) {
+        if (logout) {
+            logout.style.display = "block";
+        }
+
+        if (removedItem && userField) {
             userField.replaceChild(userNameElement, removedItem);
+        }
+
+        // ✅ إضافة زر "Dashboard" إذا كان المستخدم Admin
+        if (role === "seller") {
+            let dashboardLink = document.createElement("a");
+            dashboardLink.textContent = "Dashboard";
+            dashboardLink.href = "../html/seller-dashboard.html"; // ضع رابط صفحة لوحة التحكم
+            dashboardLink.classList.add("seller-dashboard");
+
+            // إضافة العنصر في القائمة
+            userField.appendChild(dashboardLink);
+        }
+
+        if (role === "admin") {
+            let dashboardLink = document.createElement("a");
+            dashboardLink.textContent = "Dashboard";
+            dashboardLink.href = "../html/admin.html"; // ضع رابط صفحة لوحة التحكم
+            dashboardLink.classList.add("admin-dashboard");
+
+            // إضافة العنصر في القائمة
+            userField.appendChild(dashboardLink);
         }
     }
 
